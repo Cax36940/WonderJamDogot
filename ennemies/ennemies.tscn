@@ -13,8 +13,8 @@ script = ExtResource("1_24r05")
 modulate = Color(0.956082, 0.244301, 0.304096, 1)
 texture = ExtResource("2_uksee")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uyyn3")
