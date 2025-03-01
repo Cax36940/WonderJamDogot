@@ -29,12 +29,14 @@ func _input(event):
 		if mouse_object_container.get_child_count() > 0:
 			mouse_object_container.get_child(0).position = align_on_grid(get_global_mouse_position())
 			mouse_object_container.visible = is_pos_free(get_global_mouse_position())
-			
+			if Input.is_action_pressed("mouse_click"):
+				spawn_object_at_pos(get_global_mouse_position())
 	if Input.is_action_just_pressed("mouse_click"):
-		if mouse_object_container.get_child_count() > 0 and is_pos_free(get_global_mouse_position()):
-			var instance : GridObject = mouse_object_container.get_child(0).duplicate()
-			instance.modulate.a = 1.0
-			grid_object_container.add_child(instance)
+		spawn_object_at_pos(get_global_mouse_position())
+	
+	if Input.is_action_just_pressed("mouse_cancel"):
+		if mouse_object_container.get_child_count() > 0:
+			mouse_object_container.get_child(0).queue_free()
 			
 			
 func align_on_grid(pos : Vector2) :
@@ -57,5 +59,11 @@ func is_pos_free(pos : Vector2):
 		var max_y = child.position.y + child.height * GRID_HALF_CELL_SIZE
 		if min_x <= pos.x and pos.x < max_x and min_y <= pos.y and pos.y < max_y :
 			return false
-		
 	return true	
+
+func spawn_object_at_pos(pos : Vector2):
+	if mouse_object_container.get_child_count() > 0 and is_pos_free(pos):
+		var instance : GridObject = mouse_object_container.get_child(0).duplicate()
+		instance.modulate.a = 1.0
+		grid_object_container.add_child(instance)
+	
