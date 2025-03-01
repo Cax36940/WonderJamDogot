@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://be4xyevkwme7"]
+[gd_scene load_steps=8 format=3 uid="uid://djjionukw6erg"]
 
 [ext_resource type="Script" path="res://music/music_player.gd" id="1_g5xci"]
 [ext_resource type="AudioStream" uid="uid://cts73owogdove" path="res://music/kick.wav" id="2_tnoh3"]
