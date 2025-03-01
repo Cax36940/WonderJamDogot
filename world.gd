@@ -24,8 +24,8 @@ func _process(delta):
 	pass
 
 
-func _input(event):
-	if event is InputEventMouseMotion:
+func buildTower():
+	if InputEventMouseMotion:
 		if mouse_object_container.get_child_count() > 0:
 			var object : GridObject = mouse_object_container.get_child(0)
 			object.position = align_on_grid(get_global_mouse_position(), object.width, object.height)
