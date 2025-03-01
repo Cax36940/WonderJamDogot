@@ -1,14 +1,10 @@
 extends GridObject
-#modificateur
-var modif_vie : float =1
-var modif_vie_voulu: bool = true 
-var modif_cout : float = 1
-var modif_cout_voulu: bool = false
-var modif_poid : float =1 
-var modif_poid_voulu: bool = false 
-var modif_degat : float = 1
-var modif_degat_voulu: bool = false 
-var temps_modif: float =1
+# modifiers
+var health_modif : 	float = 1.
+var cost_modif : 	float = 1.
+var weight_modif : 	float = 1.
+var attack_modif : 	float = 1.
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,33 +13,36 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-func lvl_up():
-	niveau_actuelle+=1
-	if modif_vie_voulu:
-		temps_modif = modif_vie-niveau_actuelle*0.01
-		if temps_modif<1.05 :
-			vie = vie*1.05
-		else:
-			vie * temps_modif
-	if modif_degat_voulu:
-		temps_modif = modif_degat-niveau_actuelle*0.01
-		if temps_modif<1.05:
-			vie = vie*1.05
-		else:
-			vie * temps_modif
-	if modif_cout_voulu:
-		temps_modif = modif_cout-niveau_actuelle*0.01
-		if temps_modif<1.05:
-			vie = vie*1.05
-		else:
-			vie * temps_modif
-	if modif_poid_voulu:
-		temps_modif = modif_poid-niveau_actuelle*0.01
-		if temps_modif<1.05:
-			vie = vie*1.05
-		else:
-			vie * temps_modif
-	
 	
 
-	
+func lvl_up_health() -> void :
+	var tmp_modif : float = health_modif - current_level * 0.01
+	if tmp_modif < 1.05 :
+		health = health * 1.05
+	else :
+		health *= tmp_modif
+	pass
+
+func lvl_up_cost() -> void :
+	#var tmp_modif : float = cost_modif - current_level * 0.01
+	#if tmp_modif < 1.05 :
+	#	cost = cost * 1.05
+	#else :
+	#	cost *= tmp_modif
+	pass
+
+func lvl_up_weight() -> void :
+	#var tmp_modif : float = weight_modif - current_level * 0.01
+	#if tmp_modif < 1.05 :
+	#	path_weight = path_weight * 1.05
+	#else :
+	#	path_weight *= tmp_modif
+	pass
+
+func lvl_up_attack() -> void :
+	#var tmp_modif : float = attack_modif - current_level * 0.01
+	#if tmp_modif < 1.05 :
+	#	attack = attack * 1.05
+	#else :
+	#	attack *= tmp_modif
+	pass
