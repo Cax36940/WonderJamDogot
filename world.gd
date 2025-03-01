@@ -68,7 +68,7 @@ func is_pos_free(pos : Vector2, width : int, height : int):
 		var min_pos : Vector2 = Vector2(min_x, min_y)
 		var max_pos : Vector2 = Vector2(max_x, max_y)
 
-		print(overlap(aligned_pos, max_aligned_pos, min_pos, max_pos))
+		#print(overlap(aligned_pos, max_aligned_pos, min_pos, max_pos))
 		if overlap(aligned_pos, max_aligned_pos, Vector2(min_x, min_y), Vector2(max_x, max_y)):
 			return false
 	return true	
@@ -82,10 +82,10 @@ func spawn_object_at_pos(pos : Vector2):
 			grid_object_container.add_child(instance)
 
 func overlap(min_pos1 : Vector2, max_pos1 : Vector2, min_pos2 : Vector2, max_pos2 : Vector2):
-	if min_pos1.x >= max_pos2.x or min_pos2.x >= max_pos1.x :
+	if min_pos1.x > max_pos2.x or min_pos2.x > max_pos1.x :
 		return false
 		
-	if min_pos1.y >= max_pos2.y or min_pos2.y >= max_pos1.y :
+	if min_pos1.y > max_pos2.y or min_pos2.y > max_pos1.y :
 		return false
 	
 	return true

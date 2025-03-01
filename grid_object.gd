@@ -22,6 +22,7 @@ func lvl_up() -> void :
 	lvl_up_cost()
 	lvl_up_weight()
 	lvl_up_attack()
+	lvl_up_range()
 
 
 # Functions to override by children class
@@ -36,3 +37,5 @@ func lvl_up_weight() -> void :
 
 func lvl_up_attack() -> void :
 	pass
+func lvl_up_range() -> void:
+	pass 
