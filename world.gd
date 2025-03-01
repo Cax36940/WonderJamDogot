@@ -28,7 +28,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		if mouse_object_container.get_child_count() > 0:
 			mouse_object_container.get_child(0).position = align_on_grid(get_global_mouse_position())
-			grid_object_container.visible = is_pos_free(get_global_mouse_position())
+			mouse_object_container.visible = is_pos_free(get_global_mouse_position())
 			
 	if Input.is_action_just_pressed("mouse_click"):
 		if mouse_object_container.get_child_count() > 0 and is_pos_free(get_global_mouse_position()):
