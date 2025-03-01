@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds3kqgjqmld6l"]
+[gd_scene load_steps=4 format=3 uid="uid://ds3kqgjqmld6l"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
+[ext_resource type="PackedScene" uid="uid://2g8b4gdxg28q" path="res://obstacle/basic_wall.tscn" id="2_0f1vd"]
+[ext_resource type="PackedScene" uid="uid://cv8q1brr1ts05" path="res://tower/base_tower.tscn" id="2_cswy4"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n6rbg")
+
+[node name="BaseTower" parent="." instance=ExtResource("2_cswy4")]
+position = Vector2(322, 142)
+
+[node name="BasicGridObject" parent="." instance=ExtResource("2_0f1vd")]
+position = Vector2(109, 140)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(288, 162)

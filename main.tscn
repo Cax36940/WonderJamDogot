@@ -10,3 +10,5 @@ script = ExtResource("1_6sjr8")
 [node name="World" parent="." instance=ExtResource("2_xjjyy")]
 
 [node name="StartMenu" parent="." instance=ExtResource("2_ffsj1")]
+
+[connection signal="tree_exited" from="StartMenu" to="." method="_on_start_menu_tree_exited"]

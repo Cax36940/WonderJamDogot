@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var camera : Camera2D = $Camera
+@onready var basic_grid_object: Node2D = $BasicGridObject
 
 var default_scene = preload("res://obstacle/basic_wall.tscn")
 
@@ -15,6 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	basic_grid_object.position.x += 1
 	pass
 
 
