@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi422o21y7s82"]
+[gd_scene load_steps=4 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
+[ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
 [ext_resource type="PackedScene" uid="uid://25ocrsgv466b" path="res://ennemies/spawner.tscn" id="2_n0e68"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n6rbg")
+
+[node name="GridSprite" parent="." instance=ExtResource("2_8suw1")]
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(331, 189)

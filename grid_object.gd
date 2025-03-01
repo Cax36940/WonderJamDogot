@@ -9,11 +9,6 @@ var path_weight : float = 1.
 var attack 	: float = 1.
 var current_level : int = 1
 
-
-func _init(new_width : int = 1, new_height : int = 1):
-	width = new_width
-	height = new_height
-
 func play():
 	print("aaa")
 	
