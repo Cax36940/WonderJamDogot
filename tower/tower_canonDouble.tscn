@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxc2w3eq7jqtl"]
+
+[ext_resource type="Script" path="res://tower/tower_canonDouble.gd" id="1_mgpt1"]
+[ext_resource type="Texture2D" uid="uid://bt2n2epycvudf" path="res://sprite/tour/corps.png" id="2_umsj2"]
+[ext_resource type="Texture2D" uid="uid://yegty5i3n6ac" path="res://sprite/tour/anneau.png" id="3_43bf1"]
+[ext_resource type="Texture2D" uid="uid://dti5d5e7juivn" path="res://sprite/tour/doubleCanon1.png" id="5_34iv0"]
+[ext_resource type="PackedScene" uid="uid://d1i813d2ae43h" path="res://tower/bout_de_canon.tscn" id="5_lxdvy"]
+[ext_resource type="PackedScene" uid="uid://cojcvmpbox0f4" path="res://tower/detection_area.tscn" id="6_d8s0o"]
+[ext_resource type="Texture2D" uid="uid://58nlyr7sgfd0" path="res://sprite/tour/doubleCanon3.png" id="7_yyl2n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ha3kr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_34iv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yyl2n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TowerCanon" type="Node2D"]
+script = ExtResource("1_mgpt1")
+
+[node name="Corps" type="Sprite2D" parent="."]
+position = Vector2(0, -19.5)
+texture = ExtResource("2_umsj2")
+
+[node name="Anneau" type="Sprite2D" parent="."]
+modulate = Color(0.278431, 0.611765, 0.0823529, 1)
+position = Vector2(0, -19.5)
+texture = ExtResource("3_43bf1")
+
+[node name="DetectionArea" parent="." instance=ExtResource("6_d8s0o")]
+position = Vector2(0, -1)
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -21)
+sprite_frames = SubResource("SpriteFrames_ha3kr")
+frame_progress = 0.833304
+
+[node name="BoutDeCanon" parent="AnimatedSprite2D" instance=ExtResource("5_lxdvy")]
+position = Vector2(22, -10)
+
+[node name="BoutDeCanon2" parent="AnimatedSprite2D" instance=ExtResource("5_lxdvy")]
+position = Vector2(23, 10)

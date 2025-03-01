@@ -1,13 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv8q1brr1ts05"]
+[gd_scene load_steps=5 format=3 uid="uid://cn6ctx4gw6qsm"]
 
-[ext_resource type="Script" path="res://tower/base_tower.gd" id="1_0nfpc"]
 [ext_resource type="Texture2D" uid="uid://b3x8ea25yemf3" path="res://icon.svg" id="2_o7k0q"]
 [ext_resource type="PackedScene" uid="uid://cojcvmpbox0f4" path="res://tower/detection_area.tscn" id="2_y8tj6"]
+
+[sub_resource type="GDScript" id="GDScript_w4mfg"]
+script/source = "class_name BaseTower extends GridObject
+
+
+
+
+	
+
+func _on_detected(area:Area2D) -> void:
+	print(\"\")
+	#print(\"DETECTED\")
+	#liste_ennemi.push_back(area)
+	#print(liste_ennemi[0])
+	
+
+	
+func _on_exited(area) -> void:
+	pass
+	#liste_ennemi.push_back(area)
+	#print(area.get_parent())
+	#print(\"EXITED\")
+	
+func _process(delta: float) -> void:
+	#liste_ennemi =detection_area.get_overlapping_bodies()
+	
+	
+	
+	#if !liste_ennemi.is_empty():
+	
+	
+	
+	pass
+	#print(detection_area.monitoring)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvrdb"]
 
 [node name="BaseTower" type="Node2D"]
-script = ExtResource("1_0nfpc")
+script = SubResource("GDScript_w4mfg")
 
 [node name="DetectionArea" parent="." instance=ExtResource("2_y8tj6")]
 

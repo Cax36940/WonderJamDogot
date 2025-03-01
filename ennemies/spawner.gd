@@ -1,6 +1,6 @@
 extends Node2D
 
-const ENNEMY_SPAWN_TIME = 1
+const ENNEMY_SPAWN_TIME = 0.3
 var timer = ENNEMY_SPAWN_TIME
 var scene = preload("res://ennemies/ennemies.tscn")
 

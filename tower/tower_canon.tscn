@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c2j1dqkuy8hjq"]
 
-[ext_resource type="Script" path="res://tower_canon.gd" id="1_2p02b"]
+[ext_resource type="Script" path="res://tower/tower_canon.gd" id="1_2p02b"]
 [ext_resource type="Texture2D" uid="uid://bt2n2epycvudf" path="res://sprite/tour/corps.png" id="2_0o3ik"]
 [ext_resource type="Texture2D" uid="uid://yegty5i3n6ac" path="res://sprite/tour/anneau.png" id="3_spjlx"]
 [ext_resource type="Texture2D" uid="uid://dmk52os4dlkbx" path="res://sprite/tour/canonDroit.png" id="4_b1bs0"]
