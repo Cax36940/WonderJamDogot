@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://djjionukw6erg"]
+
+[ext_resource type="Script" path="res://music/music_player.gd" id="1_g5xci"]
+[ext_resource type="AudioStream" uid="uid://cts73owogdove" path="res://music/kick.wav" id="2_tnoh3"]
+[ext_resource type="AudioStream" uid="uid://duywfunxtb7k8" path="res://music/bass1.wav" id="3_0ck46"]
+[ext_resource type="AudioStream" uid="uid://cs3leskioojvj" path="res://music/bass2.wav" id="4_88kee"]
+[ext_resource type="AudioStream" uid="uid://3sx68out5p7o" path="res://music/hihat.wav" id="5_cxej5"]
+
+[sub_resource type="Animation" id="Animation_v7ng2"]
+resource_name = "Kick"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qsv7"]
+_data = {
+"Kick": SubResource("Animation_v7ng2")
+}
+
+[node name="MusicPlayer" type="Node2D"]
+script = ExtResource("1_g5xci")
+
+[node name="Kick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tnoh3")
+volume_db = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4qsv7")
+}
+
+[node name="Bass1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0ck46")
+volume_db = 10.0
+
+[node name="Bass2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_88kee")
+volume_db = 10.0
+
+[node name="Hihat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cxej5")
+volume_db = 10.0

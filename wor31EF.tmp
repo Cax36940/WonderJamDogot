@@ -12,7 +12,6 @@ script = ExtResource("1_n6rbg")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(400, 400)
-position_smoothing_enabled = true
 script = ExtResource("3_lexd8")
 
 [node name="MouseObjectContainer" type="Node2D" parent="."]
