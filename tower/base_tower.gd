@@ -6,7 +6,6 @@ class_name BaseTower extends GridObject
 
 var range : int = 100
 var damage : int = 1
-var cost : int = 50
 var hp : int = 200
 
 func _ready() -> void:

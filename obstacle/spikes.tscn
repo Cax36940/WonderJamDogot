@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://2qlw0wr0u7u"]
+
+[ext_resource type="Script" path="res://obstacle/spikes.gd" id="1_2o4g6"]
+[ext_resource type="Texture2D" uid="uid://b3x8ea25yemf3" path="res://icon.svg" id="2_7186w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5pc0"]
+size = Vector2(32, 32)
+
+[node name="BasicGridObject" type="Node2D"]
+script = ExtResource("1_2o4g6")
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Body"]
+modulate = Color(0.423651, 0.423651, 0.423651, 1)
+position = Vector2(4.76837e-07, -4.76837e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7186w")
+
+[node name="Collision" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_e5pc0")
