@@ -10,8 +10,7 @@ script = ExtResource("1_n6rbg")
 [node name="GridSprite" parent="." instance=ExtResource("2_8suw1")]
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(331, 189)
-zoom = Vector2(2, 2)
+position = Vector2(643, 364)
 
 [node name="MouseObjectContainer" type="Node2D" parent="."]
 
