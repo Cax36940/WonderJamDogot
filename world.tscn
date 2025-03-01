@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi422o21y7s82"]
+[gd_scene load_steps=3 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
+[ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n6rbg")
@@ -12,3 +13,5 @@ zoom = Vector2(2, 2)
 [node name="MouseObjectContainer" type="Node2D" parent="."]
 
 [node name="GridObjectContainer" type="Node2D" parent="."]
+
+[node name="GridSprite" parent="." instance=ExtResource("2_8suw1")]
