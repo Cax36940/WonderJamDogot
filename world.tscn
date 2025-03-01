@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi422o21y7s82"]
+[gd_scene load_steps=5 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
-[ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
+[ext_resource type="PackedScene" uid="uid://5a0oqdy4xgx8" path="res://grid_sprite.tscn" id="2_8suw1"]
 [ext_resource type="PackedScene" uid="uid://25ocrsgv466b" path="res://ennemies/spawner.tscn" id="2_n0e68"]
+[ext_resource type="PackedScene" uid="uid://mkojoc68cgue" path="res://pathfinding/pathfinding.tscn" id="4_lna7t"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n6rbg")
@@ -19,3 +20,5 @@ zoom = Vector2(2, 2)
 
 [node name="Spawner" parent="." instance=ExtResource("2_n0e68")]
 position = Vector2(327, 185)
+
+[node name="Pathfinding" parent="." instance=ExtResource("4_lna7t")]
