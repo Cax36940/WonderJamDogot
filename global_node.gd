@@ -3,8 +3,12 @@ extends Node
 # Quantite de coins de depart
 var coin_total : int = 400
 var coin_total_float : float = coin_total
+
 var increase_factor : float = 1.2
 var coef : float = 1.
+
+var pacifiste : bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

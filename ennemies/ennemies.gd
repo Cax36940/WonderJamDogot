@@ -51,5 +51,6 @@ func setup(n:int):
 func take_damage(damage : float):
 	life -= damage
 	if life < 0 :
+		GlobalNode.pacifiste= false
 		GlobalNode.add_money(money_drop)
 		queue_free()

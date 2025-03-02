@@ -1,12 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo8ahutn742y2"]
+[gd_scene load_steps=17 format=3 uid="uid://dwus0aeb1gr6x"]
 
-[ext_resource type="Texture2D" uid="uid://crjkn025nicar" path="res://sprite/END_SCREEN/PAGE_1.png" id="1_jnfcc"]
+[ext_resource type="Texture2D" uid="uid://edtm6cojnemd" path="res://sprite/END_SCREEN/PAGE_1.png" id="1_jnfcc"]
 [ext_resource type="Script" path="res://sprite/END_SCREEN/end_screen.gd" id="1_v8ems"]
-[ext_resource type="Texture2D" uid="uid://yq6wmui6cl5f" path="res://sprite/END_SCREEN/PAGE_2.png" id="2_4om0s"]
-[ext_resource type="Texture2D" uid="uid://b3biukvh00lqx" path="res://sprite/END_SCREEN/WHY.png" id="3_7o4p4"]
-[ext_resource type="Texture2D" uid="uid://bl5yu78ljn04p" path="res://sprite/END_SCREEN/WE_CAME_IN_PEACE.png" id="4_7xv44"]
-[ext_resource type="Texture2D" uid="uid://bf4dved4q1yyt" path="res://sprite/END_SCREEN/YOU MURDERED.png" id="5_sdjio"]
-[ext_resource type="Texture2D" uid="uid://buiclynlba6yp" path="res://sprite/END_SCREEN/MA FRIENDS.png" id="6_8bfy2"]
+[ext_resource type="Texture2D" uid="uid://cnhk5hnrrlsw5" path="res://sprite/END_SCREEN/PAGE_2.png" id="2_4om0s"]
+[ext_resource type="Texture2D" uid="uid://dlm4r2wdb5xy0" path="res://sprite/END_SCREEN/WHY.png" id="3_7o4p4"]
+[ext_resource type="Texture2D" uid="uid://dv2fxjilbe3xu" path="res://sprite/END_SCREEN/WE_CAME_IN_PEACE.png" id="4_7xv44"]
+[ext_resource type="Texture2D" uid="uid://sorf61cgjk7h" path="res://sprite/END_SCREEN/YOU MURDERED.png" id="5_sdjio"]
+[ext_resource type="Texture2D" uid="uid://cp2pqmda0pe6j" path="res://sprite/END_SCREEN/MA FRIENDS.png" id="6_8bfy2"]
 
 [sub_resource type="Animation" id="Animation_r7v1m"]
 resource_name = "Page_1"

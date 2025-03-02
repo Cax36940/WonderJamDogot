@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cndu6dkuoo2y6"]
 
 [ext_resource type="Script" path="res://menu/start_menu/start_menu.gd" id="1_u8xam"]
-[ext_resource type="Texture2D" uid="uid://boer8jgiie3m3" path="res://sprite/Bouton/main menu.png" id="2_nei43"]
-[ext_resource type="Texture2D" uid="uid://0e2d3ssslasb" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
-[ext_resource type="Texture2D" uid="uid://cnjq5op716jgk" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
-[ext_resource type="Texture2D" uid="uid://bx5kl6kbedw2j" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
-[ext_resource type="Texture2D" uid="uid://cx721q2vorafo" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
-[ext_resource type="Texture2D" uid="uid://skhktxvdfnnd" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
-[ext_resource type="Texture2D" uid="uid://dlig3ti2xdtr5" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
-[ext_resource type="AudioStream" uid="uid://7jlsj0om2bm4" path="res://music/Zgloububiglobe.mp3" id="9_xyy5q"]
+[ext_resource type="Texture2D" uid="uid://bmtsknbqdnjdn" path="res://sprite/Bouton/main menu.png" id="2_nei43"]
+[ext_resource type="Texture2D" uid="uid://1voyeo7ejecw" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
+[ext_resource type="Texture2D" uid="uid://ciyhv3rflyi1e" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
+[ext_resource type="Texture2D" uid="uid://der8t35t0c8vn" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
+[ext_resource type="Texture2D" uid="uid://cxmj0ypnmad5y" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
+[ext_resource type="Texture2D" uid="uid://cgo7vyb3dhap5" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
+[ext_resource type="Texture2D" uid="uid://c2wo3pksb0kdm" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
+[ext_resource type="AudioStream" uid="uid://bvu6ihrrfwiyj" path="res://music/Zgloububiglobe.mp3" id="9_6tpq8"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -39,9 +39,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -134.0
-offset_top = -43.0
+offset_top = -152.0
 offset_right = 114.0
-offset_bottom = 157.0
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -57,7 +57,7 @@ texture_hover = ExtResource("4_s1sox")
 stretch_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 
 [node name="btn_quit" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
@@ -68,5 +68,5 @@ texture_pressed = ExtResource("6_w4yiw")
 texture_hover = ExtResource("7_fg2mn")
 stretch_mode = 0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_xyy5q")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6tpq8")
