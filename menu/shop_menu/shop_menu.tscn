@@ -224,7 +224,6 @@ vertical_alignment = 1
 [node name="Coin_Count" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Coins : 001"
 script = ExtResource("11_3c1gm")
 
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanon" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
