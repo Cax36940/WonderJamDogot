@@ -8,11 +8,14 @@ extends Node2D
 
 var basic_wall_scene = preload("res://obstacle/basic_wall.tscn")
 var spikes_scene = preload("res://obstacle/spikes.tscn")
+
 var canon_tower_scene = preload("res://tower/tower_canon.tscn")
 var canon_double_tower_scene = preload("res://tower/tower_canonDouble.tscn")
+var fire_tower_scene = preload("res://tower/tower_fire.tscn")
+var plasma_tower_scene = preload("res://tower/tower_plasma.tscn")
 
-var obstacle_name_list : Array[String] = ["iconCanon", "iconDoubleCanon"]
-var obstacle_scene_list = [canon_tower_scene, canon_double_tower_scene]
+var obstacle_name_list : Array[String] = ["iconCanon", "iconDoubleCanon", "iconLanceFlame", "iconCanonPlasma"]
+var obstacle_scene_list = [canon_tower_scene, canon_double_tower_scene, fire_tower_scene, plasma_tower_scene]
 
 const GRID_CELL_SIZE : int = 16
 const GRID_HALF_CELL_SIZE : int = 8
@@ -117,6 +120,7 @@ func clear_mouse_object():
 		child.queue_free()
 	
 func buy_object(string : String):
+	print(string)
 	for i in range(0, obstacle_name_list.size()):
 		if string == obstacle_name_list[i]:
 

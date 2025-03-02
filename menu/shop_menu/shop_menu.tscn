@@ -114,7 +114,7 @@ text = "10k c"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="iconLanceFlamme" type="TextureButton" parent="CanvasLayer/Shop/ShopColumn" groups=["ShopButtons"]]
+[node name="iconLanceFlame" type="TextureButton" parent="CanvasLayer/Shop/ShopColumn" groups=["ShopButtons"]]
 layout_mode = 2
 size_flags_vertical = 3
 toggle_mode = true
@@ -124,7 +124,7 @@ texture_hover = ExtResource("3_et80b")
 texture_disabled = ExtResource("4_a7q0x")
 script = ExtResource("2_3t67b")
 
-[node name="LanceFlamme" type="TextureRect" parent="CanvasLayer/Shop/ShopColumn/iconLanceFlamme"]
+[node name="LanceFlamme" type="TextureRect" parent="CanvasLayer/Shop/ShopColumn/iconLanceFlame"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = -8.0
@@ -132,7 +132,7 @@ offset_right = 114.0
 offset_bottom = 92.0
 texture = ExtResource("8_u8n1y")
 
-[node name="Label" type="Label" parent="CanvasLayer/Shop/ShopColumn/iconLanceFlamme/LanceFlamme"]
+[node name="Label" type="Label" parent="CanvasLayer/Shop/ShopColumn/iconLanceFlame/LanceFlamme"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -229,6 +229,6 @@ script = ExtResource("11_3c1gm")
 
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanon" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" to="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconLanceFlamme" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanonPlasma" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconBarriere" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconLanceFlame" to="CanvasLayer/Shop/ShopColumn/iconLanceFlame" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanonPlasma" to="CanvasLayer/Shop/ShopColumn/iconCanonPlasma" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconBarriere" to="CanvasLayer/Shop/ShopColumn/iconBarriere" method="_on_pressed"]
