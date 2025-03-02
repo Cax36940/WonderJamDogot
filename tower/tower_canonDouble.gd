@@ -20,6 +20,8 @@ var damage : int = 1
 var hp : int = 200
 
 func _ready() -> void:
+	width = 2
+	height = 2
 	detection_area.get_child(0).shape.radius = range
 	#detection_area.shape.radius = range
 	

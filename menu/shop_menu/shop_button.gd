@@ -13,5 +13,4 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	world.buildTower()
 	world.buy_object(self.name)

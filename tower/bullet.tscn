@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://r2lpn1brx0bv"]
+[gd_scene load_steps=4 format=3 uid="uid://1denokaupet5"]
 
 [ext_resource type="Script" path="res://tower/bullet.gd" id="1_8wsqv"]
 [ext_resource type="Texture2D" uid="uid://dox7p3hhbec81" path="res://sprite/tour/bouletCanon.png" id="1_baiuo"]

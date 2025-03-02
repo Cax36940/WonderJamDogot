@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxc2w3eq7jqtl"]
+[gd_scene load_steps=9 format=3 uid="uid://vywsr673wqme"]
 
 [ext_resource type="Script" path="res://tower/tower_canonDouble.gd" id="1_mgpt1"]
 [ext_resource type="Texture2D" uid="uid://bt2n2epycvudf" path="res://sprite/tour/corps.png" id="2_umsj2"]
 [ext_resource type="Texture2D" uid="uid://yegty5i3n6ac" path="res://sprite/tour/anneau.png" id="3_43bf1"]
-[ext_resource type="Texture2D" uid="uid://dti5d5e7juivn" path="res://sprite/tour/doubleCanon1.png" id="5_34iv0"]
-[ext_resource type="PackedScene" uid="uid://d1i813d2ae43h" path="res://tower/bout_de_canon.tscn" id="5_lxdvy"]
-[ext_resource type="PackedScene" uid="uid://cojcvmpbox0f4" path="res://tower/detection_area.tscn" id="6_d8s0o"]
-[ext_resource type="Texture2D" uid="uid://58nlyr7sgfd0" path="res://sprite/tour/doubleCanon3.png" id="7_yyl2n"]
+[ext_resource type="Texture2D" uid="uid://bw4ocegum1k05" path="res://sprite/tour/doubleCanon1.png" id="5_34iv0"]
+[ext_resource type="PackedScene" uid="uid://ciql3ga8rhef8" path="res://tower/bout_de_canon.tscn" id="5_lxdvy"]
+[ext_resource type="PackedScene" path="res://tower/detection_area.tscn" id="6_d8s0o"]
+[ext_resource type="Texture2D" uid="uid://dd3ijo6pqflkn" path="res://sprite/tour/doubleCanon3.png" id="7_yyl2n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ha3kr"]
 animations = [{
