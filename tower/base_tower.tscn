@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn6ctx4gw6qsm"]
+[gd_scene load_steps=5 format=3 uid="uid://cv8q1brr1ts05"]
 
 [ext_resource type="Texture2D" uid="uid://b3x8ea25yemf3" path="res://icon.svg" id="2_o7k0q"]
-[ext_resource type="PackedScene" uid="uid://cojcvmpbox0f4" path="res://tower/detection_area.tscn" id="2_y8tj6"]
+[ext_resource type="PackedScene" uid="uid://da3bp4xnce1ip" path="res://tower/detection_area.tscn" id="2_y8tj6"]
 
 [sub_resource type="GDScript" id="GDScript_w4mfg"]
 script/source = "class_name BaseTower extends GridObject
