@@ -32,7 +32,8 @@ func distance_to_center(x:int,y:int):
 	return abs(x - center.x) + abs(y-center.y)
 
 func update_weight(x:int,y:int,weight:float):
-	grid[y][x].weight = distance_to_center(x,y) + weight
+	if y < 41 and x < 41 :
+		grid[y][x].weight = distance_to_center(x,y) + weight
 	
 func compute_best_neighbour(coords:Vector2) -> Vector2:
 	

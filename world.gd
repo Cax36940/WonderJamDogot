@@ -99,8 +99,8 @@ func spawn_object_at_pos(pos : Vector2):
 			
 			#Si on a assez d'argent, effectue le code, et reduit l'argent
 			if GlobalNode.coin_total >= instance.place_cost:
-				GlobalNode.coin_total -= instance.place_cost
-				print("BOUGHT   " + str(instance))
+				GlobalNode.remove_coin(instance.place_cost)
+				#print("BOUGHT   " + str(instance))
 				instance.modulate.a = 1.0
 				instance.z_index = int(instance.position.y / 16)
 				grid_object_container.add_child(instance)
