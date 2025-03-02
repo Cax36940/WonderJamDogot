@@ -14,13 +14,22 @@ func _process(delta: float) -> void:
 	#velocity = parent.global_position - global_position
 	#velocity = velocity.normalized() * speed
 	global_position += velocity * delta
+	if velocity.x >= 0:
+		$Icon.flip_h = true
+	else: $Icon.flip_h = false
 	#if (parent.global_position - global_position).length() < 0.1 :
 		#queue_free()
 		
 func setup1():
-	speed = 50
-	modulate = Color(1,0,0)
+	speed = 2
+	$Icon.play("Crawler")
 	
 func setup2():
-	speed = 100
-	modulate = Color(0,0,1)
+	speed = 4
+	$Icon.play("Ball")
+func setup3():
+	speed = 0.5
+	$Icon.play("Mecha")
+func setup4():
+	speed = 7
+	$Icon.play("Flyer")

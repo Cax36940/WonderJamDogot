@@ -4,7 +4,7 @@ extends Node2D
 @onready var mouse_object_container : Node2D = $MouseObjectContainer
 @onready var grid_object_container : Node2D = $GridObjectContainer
 
-
+@onready var pathfinding : Node2D = $Pathfinding
 
 var basic_wall_scene = preload("res://obstacle/basic_wall.tscn")
 var spikes_scene = preload("res://obstacle/spikes.tscn")
@@ -89,12 +89,19 @@ func is_pos_free(pos : Vector2, width : int, height : int):
 
 func spawn_object_at_pos(pos : Vector2):
 	if mouse_object_container.get_child_count() > 0 :
+		
 		var object : GridObject = mouse_object_container.get_child(0)
 		if is_pos_free(pos, object.width, object.height):
 			var instance : GridObject = object.duplicate()
-			instance.modulate.a = 1.0
-			instance.z_index = int(instance.position.y / 16)
-			grid_object_container.add_child(instance)
+			
+			#Si on a assez d'argent, effectue le code, et reduit l'argent
+			if GlobalNode.coin_total >= instance.place_cost:
+				GlobalNode.coin_total -= instance.place_cost
+				print("BOUGHT   " + str(instance))
+				instance.modulate.a = 1.0
+				instance.z_index = int(instance.position.y / 16)
+				grid_object_container.add_child(instance)
+				pathfinding.update_weights()
 
 func overlap(min_pos1 : Vector2, max_pos1 : Vector2, min_pos2 : Vector2, max_pos2 : Vector2):
 	if min_pos1.x >= max_pos2.x or min_pos2.x >= max_pos1.x :
@@ -112,6 +119,7 @@ func clear_mouse_object():
 func buy_object(string : String):
 	for i in range(0, obstacle_name_list.size()):
 		if string == obstacle_name_list[i]:
+
 			clear_mouse_object()
 			var instance : GridObject = obstacle_scene_list[i].instantiate()
 			instance.modulate.a = 0.5

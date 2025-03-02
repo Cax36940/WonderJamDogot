@@ -15,7 +15,7 @@ var vitesseDeTire :float =1
 # Called when the node enters the scene tree for the first time.
 var liste_ennemi = []
 
-
+var place_cost : int = 100
 var range : int = 200
 var damage : int = 1
 var hp : int = 200

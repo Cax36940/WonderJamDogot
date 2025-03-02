@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8rha5ngjw3br"]
+[gd_scene load_steps=12 format=3 uid="uid://c8rha5ngjw3br"]
 
 [ext_resource type="Texture2D" uid="uid://dnyx8rv6kt002" path="res://sprite/Bouton/shop_button.png" id="1_pqsj3"]
 [ext_resource type="Script" path="res://menu/shop_menu/shop_button.gd" id="2_3t67b"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bksde2tsuvh5v" path="res://sprite/shop/iconDoubleCanon.png" id="7_ttqcd"]
 [ext_resource type="Texture2D" uid="uid://c6dj8jmllrtmq" path="res://sprite/shop/iconLanceFlamme.png" id="8_u8n1y"]
 [ext_resource type="Texture2D" uid="uid://b1w3elehavm3b" path="res://sprite/shop/iconCanonPlasma.png" id="9_necqf"]
-[ext_resource type="Texture2D" uid="uid://dryxee3fi3yn2" path="res://sprite/barriere/iconBarriere.png" id="10_cllt0"]
+[ext_resource type="Texture2D" uid="uid://dryxee3fi3yn2" path="res://sprite/barriere/iconBarriere.png" id="10_ygwwp"]
+[ext_resource type="Script" path="res://menu/shop_menu/coin_count.gd" id="11_3c1gm"]
 
 [node name="ShopMenu" type="Control"]
 layout_mode = 3
@@ -73,7 +74,7 @@ offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "10 c"
+text = "100 c"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -109,7 +110,7 @@ offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "20 c"
+text = "10k c"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -145,7 +146,7 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "50 c"
+text = "1M c"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -181,7 +182,7 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100 c"
+text = "100M c"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -197,28 +198,34 @@ script = ExtResource("2_3t67b")
 
 [node name="Barriere" type="TextureRect" parent="CanvasLayer/Shop/ShopColumn/iconBarriere"]
 layout_mode = 0
-offset_top = -7.0
-offset_right = 134.0
-offset_bottom = 127.0
-texture = ExtResource("10_cllt0")
+offset_left = 50.0
+offset_top = 28.0
+offset_right = 82.0
+offset_bottom = 92.0
+texture = ExtResource("10_ygwwp")
 
-[node name="Label" type="Label" parent="CanvasLayer/Shop/ShopColumn/iconBarriere/Barriere"]
+[node name="Label" type="Label" parent="CanvasLayer/Shop/ShopColumn/iconBarriere"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.377
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -5.518
-offset_top = -34.0
-offset_right = 18.0
-offset_bottom = -11.0
+offset_left = -2.256
+offset_top = -66.0
+offset_right = 21.262
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "5 c"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Coin_Count" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("11_3c1gm")
 
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanon" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" to="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" method="_on_pressed"]
