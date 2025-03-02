@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqy88jj70023g"]
+
+[ext_resource type="Texture2D" uid="uid://b3x8ea25yemf3" path="res://icon.svg" id="1_83tju"]
+
+[node name="Debugarrow" type="Node2D"]
+scale = Vector2(0.125, 0.125)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.25)
+texture = ExtResource("1_83tju")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(36, 37)
+rotation = -0.663251
+scale = Vector2(0.632813, 0.1875)
+texture = ExtResource("1_83tju")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(33, -36)
+rotation = 0.544643
+scale = Vector2(0.6875, 0.1875)
+texture = ExtResource("1_83tju")
