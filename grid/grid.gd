@@ -8,7 +8,7 @@ var center:Vector2
 
 func _init(size: Vector2 = Vector2(40,40)) -> void:
 	grid_size = size
-	center = grid_size / 2
+	center = Vector2(int(grid_size.x / 2),int(grid_size.y / 2))
 	
 func _ready() -> void:
 	init_grid()
@@ -31,7 +31,7 @@ func update_directions() -> void:
 func distance_to_center(x:int,y:int):
 	return abs(x - center.x) + abs(y-center.y)
 
-func update_weight(x:int,y:int,weight:int):
+func update_weight(x:int,y:int,weight:float):
 	grid[y][x].weight = distance_to_center(x,y) + weight
 	
 func compute_best_neighbour(coords:Vector2) -> Vector2:
