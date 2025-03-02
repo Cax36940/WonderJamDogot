@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cndu6dkuoo2y6"]
 
 [ext_resource type="Script" path="res://menu/start_menu/start_menu.gd" id="1_u8xam"]
-[ext_resource type="Texture2D" uid="uid://b0pojaajm8tu3" path="res://sprite/Bouton/main menu.png" id="2_nei43"]
-[ext_resource type="Texture2D" uid="uid://btss68h7g3uu8" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
-[ext_resource type="Texture2D" uid="uid://bp2v0i4d83qpe" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
-[ext_resource type="Texture2D" uid="uid://cb1p5523kdsce" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
-[ext_resource type="Texture2D" uid="uid://cmh4rhcdtatsx" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
-[ext_resource type="Texture2D" uid="uid://ccinbdleyb4t3" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
-[ext_resource type="Texture2D" uid="uid://c78wgsoom1onm" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
-[ext_resource type="AudioStream" uid="uid://c0m7shoqqgsu3" path="res://music/Zgloububiglobe.mp3" id="9_xyy5q"]
+[ext_resource type="Texture2D" uid="uid://boer8jgiie3m3" path="res://sprite/Bouton/main menu.png" id="2_nei43"]
+[ext_resource type="Texture2D" uid="uid://0e2d3ssslasb" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
+[ext_resource type="Texture2D" uid="uid://cnjq5op716jgk" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
+[ext_resource type="Texture2D" uid="uid://bx5kl6kbedw2j" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
+[ext_resource type="Texture2D" uid="uid://cx721q2vorafo" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
+[ext_resource type="Texture2D" uid="uid://skhktxvdfnnd" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
+[ext_resource type="Texture2D" uid="uid://dlig3ti2xdtr5" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
+[ext_resource type="AudioStream" uid="uid://7jlsj0om2bm4" path="res://music/Zgloububiglobe.mp3" id="9_xyy5q"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
