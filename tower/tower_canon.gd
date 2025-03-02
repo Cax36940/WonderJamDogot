@@ -5,7 +5,7 @@ class_name TowerCanon
 #@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 var bullet_ref = preload("res://tower/bullet.tscn")
 var health_modif : 	float = 1.
-var cost_modif : 	float = 1.
+var cost_modif : 	float = 2.
 var weight_modif : 	float = 1.
 var attack_modif : 	float = 1.
 var range_modif : 	float = 1.
@@ -61,11 +61,12 @@ func lvl_up_health() -> void :
 	pass
 
 func lvl_up_cost() -> void :
-	#var tmp_modif : float = cost_modif - current_level * 0.01
-	#if tmp_modif < 1.05 :
-	#	cost = cost * 1.05
-	#else :
-	#	cost *= tmp_modif
+	$Anneau.modulate = Color.from_hsv(float((100 + 10 * current_level) % 360) / 360, 0.8, 0.8)
+	var tmp_modif : float = cost_modif - current_level * 0.05
+	if tmp_modif < 1.05 :
+		cost = cost * 1.05
+	else :
+		cost *= tmp_modif
 	pass
 
 func lvl_up_weight() -> void :
@@ -77,12 +78,9 @@ func lvl_up_weight() -> void :
 	pass
 
 func lvl_up_attack() -> void :
-	#var tmp_modif : float = attack_modif - current_level * 0.01
-	#if tmp_modif < 1.05 :
-	#	attack = attack * 1.05
-	#else :
-	#	attack *= tmp_modif
+	attack *= 1.1
 	pass
+	
 func lvl_up_range() -> void :
 	#var tmp_modif : float = range_modif - current_level * 0.01
 	#if tmp_modif < 1.05 :

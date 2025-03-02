@@ -4,7 +4,7 @@ const ENNEMY_SPAWN_TIME = 0.5
 var timer = ENNEMY_SPAWN_TIME
 var scene = preload("res://ennemies/ennemies.tscn")
 var spawn_rate : float = 0.2
-var life_rate: float = 0.0
+var life_rate: float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

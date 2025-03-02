@@ -55,6 +55,8 @@ func _input(event):
 				if Input.is_action_pressed("mouse_click"):
 					if object is DeleteObject :
 						delete_at_pos(get_global_mouse_position())
+					if object is UpgradeObject :
+						upgrade_at_pos(get_global_mouse_position())
 				
 				
 	if Input.is_action_just_pressed("mouse_click"):
@@ -65,8 +67,8 @@ func _input(event):
 			else :
 				if object is DeleteObject :
 					delete_at_pos(get_global_mouse_position())
-				#if object is UpgradeObject :
-				#	upgrade_at_pos(get_global_mouse_position())
+				if object is UpgradeObject :
+					upgrade_at_pos(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("mouse_cancel"):
 		if mouse_object_container.get_child_count() > 0:
@@ -120,8 +122,7 @@ func spawn_object_at_pos(pos : Vector2):
 			var instance : GridObject = object.duplicate()
 			
 			#Si on a assez d'argent, effectue le code, et reduit l'argent
-			if GlobalNode.coin_total >= instance.place_cost:
-				GlobalNode.remove_coin(instance.place_cost)
+			if GlobalNode.remove_coin(instance.place_cost):
 				#print("BOUGHT   " + str(instance))
 				instance.modulate.a = 1.0
 				instance.z_index = int(instance.position.y / 16)
@@ -137,6 +138,16 @@ func delete_at_pos(pos : Vector2):
 					if child is not Roi:
 						GlobalNode.add_money_value(child.place_cost * 0.75)
 						child.queue_free()
+
+func upgrade_at_pos(pos : Vector2):
+
+	if mouse_object_container.get_child_count() > 0 :
+		var object = mouse_object_container.get_child(0)
+		if object is UpgradeObject:
+			for child : GridObject in grid_object_container.get_children():
+				if child.position.x - 16 < pos.x and pos.x < child.position.x + 16 and child.position.y - 16 < pos.y and pos.y < child.position.y + 16:
+					if child is not Roi:
+						child.lvl_up()
 
 func overlap(min_pos1 : Vector2, max_pos1 : Vector2, min_pos2 : Vector2, max_pos2 : Vector2):
 	if min_pos1.x >= max_pos2.x or min_pos2.x >= max_pos1.x :
