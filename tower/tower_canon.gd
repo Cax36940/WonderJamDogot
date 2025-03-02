@@ -1,4 +1,5 @@
-extends GridObject
+extends GridObject 
+class_name TowerCanon
 @onready var detection_area: Area2D = $DetectionArea
 #@onready var body: StaticBody2D = $Body
 #@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -34,16 +35,16 @@ func _process(delta: float) -> void:
 	#$CanonDroit.look_at(get_global_mouse_position())
 	if !liste_ennemi.is_empty():
 		can_shoot = true
-		timer -= delta
-		if timer < 0 :
-			timer = vitesseDeTire
-			shoot()
+		#timer -= delta
+		#if timer < 0 :
+		#	timer = vitesseDeTire
+		#	shoot()
 		
 		$CanonDroit.look_at(liste_ennemi[0].global_position)
 	else :
 		can_shoot = false
 	
-func shoot()-> void:
+func shoot() -> bool:
 	if can_shoot :
 		var vecteur = Vector2(1,0)
 		vecteur= vecteur.rotated($CanonDroit.rotation)
@@ -51,9 +52,9 @@ func shoot()-> void:
 		instance.position = $CanonDroit/BoutDeCanon.global_position - global_position
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
 		add_child(instance)
-		
-		
-		pass
+		return true
+	return false
+
 func lvl_up_health() -> void :
 	var tmp_modif : float = health_modif - current_level * 0.01
 	if tmp_modif < 1.05 :

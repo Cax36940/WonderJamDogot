@@ -8,6 +8,7 @@ var hihat_list : Array[int] = [0,0,0,0,  1,0,0,0,  0,0,0,0,  1,0,0,0,  0,0,0,0, 
 
 var current_bar = 0
 
+@onready var grid_object_container : Node2D = $"../GridObjectContainer"
 
 const TEMPO : int = 140
 const BAR_PER_SEC : int = 32
@@ -16,6 +17,10 @@ const BAR_LENGTH : float = 1.75 / 16
 var timer = BAR_LENGTH
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Kick.volume_db = -20
+	$Bass1.volume_db = -20
+	$Bass2.volume_db = -20
+	$Hihat.volume_db = -20
 	print(BAR_LENGTH)
 	pass # Replace with function body.
 
@@ -41,6 +46,13 @@ func play_bar():
 func kick():
 	var index = current_bar % kick_list.size()
 	if kick_list[index] == 1:
+		var db = 0
+		for child in grid_object_container.get_children():
+			if child is TowerCanon :
+				if child.shoot() :
+					db += 1
+					
+		#$Kick.volume_db = db
 		$Kick.play()
 	
 func bass1():
