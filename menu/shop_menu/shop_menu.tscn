@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8rha5ngjw3br"]
 
-[ext_resource type="Texture2D" uid="uid://dnyx8rv6kt002" path="res://sprite/Bouton/shop_button.png" id="1_pqsj3"]
+[ext_resource type="Texture2D" uid="uid://2tiypgk1o5h0" path="res://sprite/Bouton/shop_button.png" id="1_pqsj3"]
 [ext_resource type="Script" path="res://menu/shop_menu/shop_button.gd" id="2_3t67b"]
-[ext_resource type="Texture2D" uid="uid://dlcfaqmj8aarr" path="res://sprite/Bouton/shop_button_pressed.png" id="2_dv3bh"]
-[ext_resource type="Texture2D" uid="uid://1ul6ld1uwnsl" path="res://sprite/Bouton/shop_button_hover.png" id="3_et80b"]
-[ext_resource type="Texture2D" uid="uid://d0mnhqcxtspv6" path="res://sprite/Bouton/shop_button_disabled.png" id="4_a7q0x"]
-[ext_resource type="Texture2D" uid="uid://bjnuvvm4opt7h" path="res://sprite/shop/iconCanon.png" id="6_5j1lb"]
-[ext_resource type="Texture2D" uid="uid://bksde2tsuvh5v" path="res://sprite/shop/iconDoubleCanon.png" id="7_ttqcd"]
-[ext_resource type="Texture2D" uid="uid://c6dj8jmllrtmq" path="res://sprite/shop/iconLanceFlamme.png" id="8_u8n1y"]
-[ext_resource type="Texture2D" uid="uid://b1w3elehavm3b" path="res://sprite/shop/iconCanonPlasma.png" id="9_necqf"]
-[ext_resource type="Texture2D" uid="uid://dryxee3fi3yn2" path="res://sprite/barriere/IconBarriere.png" id="10_ygwwp"]
+[ext_resource type="Texture2D" uid="uid://bxnjlvo7fbywd" path="res://sprite/Bouton/shop_button_pressed.png" id="2_dv3bh"]
+[ext_resource type="Texture2D" uid="uid://fir8ijueg47k" path="res://sprite/Bouton/shop_button_hover.png" id="3_et80b"]
+[ext_resource type="Texture2D" uid="uid://i7dl8jc76ki2" path="res://sprite/Bouton/shop_button_disabled.png" id="4_a7q0x"]
+[ext_resource type="Texture2D" uid="uid://bfjtaclj77yrr" path="res://sprite/shop/iconCanon.png" id="6_5j1lb"]
+[ext_resource type="Texture2D" uid="uid://qoge0adi41f7" path="res://sprite/shop/iconDoubleCanon.png" id="7_ttqcd"]
+[ext_resource type="Texture2D" uid="uid://cndqr5fxt07gr" path="res://sprite/shop/iconLanceFlamme.png" id="8_u8n1y"]
+[ext_resource type="Texture2D" uid="uid://cvj5miq685wap" path="res://sprite/shop/iconCanonPlasma.png" id="9_necqf"]
+[ext_resource type="Texture2D" uid="uid://bfhy5jm2ju767" path="res://sprite/barriere/IconBarriere.png" id="10_ygwwp"]
 [ext_resource type="Script" path="res://menu/shop_menu/coin_count.gd" id="11_3c1gm"]
 
 [node name="ShopMenu" type="Control"]
@@ -74,7 +74,7 @@ offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100 c"
+text = "100 z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -110,7 +110,7 @@ offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "10k c"
+text = "10k z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -125,6 +125,7 @@ texture_disabled = ExtResource("4_a7q0x")
 script = ExtResource("2_3t67b")
 
 [node name="iconDoubleCanon" type="TextureRect" parent="CanvasLayer/Shop/ShopColumn/iconLanceFlame"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = -8.0
 offset_right = 114.0
@@ -145,7 +146,7 @@ offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1M c"
+text = "1M z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -181,7 +182,7 @@ offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100M c"
+text = "100M z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -217,7 +218,7 @@ offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "5 c"
+text = "5 z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
