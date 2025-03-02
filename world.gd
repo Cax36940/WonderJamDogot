@@ -134,8 +134,9 @@ func delete_at_pos(pos : Vector2):
 		if object is DeleteObject:
 			for child : GridObject in grid_object_container.get_children():
 				if child.position.x - 16 < pos.x and pos.x < child.position.x + 16 and child.position.y - 16 < pos.y and pos.y < child.position.y + 16:
-					GlobalNode.add_money_value(child.place_cost * 0.75)
-					child.queue_free()
+					if child is not Roi:
+						GlobalNode.add_money_value(child.place_cost * 0.75)
+						child.queue_free()
 
 func overlap(min_pos1 : Vector2, max_pos1 : Vector2, min_pos2 : Vector2, max_pos2 : Vector2):
 	if min_pos1.x >= max_pos2.x or min_pos2.x >= max_pos1.x :

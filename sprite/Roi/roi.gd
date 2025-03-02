@@ -1,4 +1,4 @@
-extends GridObject
+class_name Roi extends GridObject
 
 
 # Called when the node enters the scene tree for the first time.
