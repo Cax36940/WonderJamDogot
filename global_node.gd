@@ -19,3 +19,7 @@ func add_money():
 	coin_total_float += increase_value
 	coin_total = int(coin_total_float)
 	increase_value *= increase_factor
+
+func remove_coin(value):
+	coin_total_float -= value
+	coin_total = int(coin_total_float)

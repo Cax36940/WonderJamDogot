@@ -24,7 +24,7 @@ func _process(_delta) -> void:
 		var pos = child.global_position
 		var pos_grid = Vector2(int(pos.x/16),int(pos.y/16))
 		if not grid.is_in_grid(pos_grid):
-			print(grid.center)
+			#print(grid.center)
 			child.velocity = Vector2i((grid.center * 16 - pos) * child.speed / 16)
 		else :
 			var curr_cell = grid.grid[pos_grid.y][pos_grid.x]
