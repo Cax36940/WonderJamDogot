@@ -1,7 +1,7 @@
 class_name PauseMenu extends Control
 
-@onready var btn_resume: Button = $CanvasLayer/VBoxContainer/btn_resume
-@onready var btn_quit: Button = $CanvasLayer/VBoxContainer/btn_quit
+@onready var btn_resume: TextureButton = $CanvasLayer/VBoxContainer/btn_resume
+@onready var btn_quit: TextureButton = $CanvasLayer/VBoxContainer/btn_quit
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED;

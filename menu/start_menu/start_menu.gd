@@ -1,7 +1,7 @@
 class_name StartMenu extends Control
 
-@onready var btn_start: Button = $CanvasLayer/VBoxContainer/btn_start
-@onready var btn_quit: Button = $CanvasLayer/VBoxContainer/btn_quit
+@onready var btn_start: TextureButton = $CanvasLayer/VBoxContainer/btn_start
+@onready var btn_quit: TextureButton = $CanvasLayer/VBoxContainer/btn_quit
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED;

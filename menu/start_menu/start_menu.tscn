@@ -1,14 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cndu6dkuoo2y6"]
+[gd_scene load_steps=8 format=3 uid="uid://cndu6dkuoo2y6"]
 
 [ext_resource type="Script" path="res://menu/start_menu/start_menu.gd" id="1_u8xam"]
+[ext_resource type="Texture2D" uid="uid://btss68h7g3uu8" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
+[ext_resource type="Texture2D" uid="uid://bp2v0i4d83qpe" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
+[ext_resource type="Texture2D" uid="uid://cb1p5523kdsce" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
+[ext_resource type="Texture2D" uid="uid://cmh4rhcdtatsx" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
+[ext_resource type="Texture2D" uid="uid://ccinbdleyb4t3" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
+[ext_resource type="Texture2D" uid="uid://c78wgsoom1onm" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 16.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00777, 1.00864)
 script = ExtResource("1_u8xam")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -20,26 +31,31 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -118.0
-offset_top = -33.0
+offset_top = -70.5
 offset_right = 118.0
-offset_bottom = 33.0
+offset_bottom = 70.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="btn_start" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="btn_start" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Commencer
-"
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_sdl8l")
+texture_pressed = ExtResource("3_6wrn0")
+texture_hover = ExtResource("4_s1sox")
+stretch_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="btn_quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="btn_quit" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Quitter"
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_1s1mc")
+texture_pressed = ExtResource("6_w4yiw")
+texture_hover = ExtResource("7_fg2mn")
+stretch_mode = 0
