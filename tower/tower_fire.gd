@@ -43,6 +43,7 @@ func shoot() -> bool:
 		var instance = bullet_ref.instantiate()
 		instance.position = $LanceFlammeDroit/BoutDeCanon.global_position - global_position
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
+		instance.rotation = $LanceFlammeDroit.rotation
 		instance.attack = attack
 		add_child(instance)
 		return true
