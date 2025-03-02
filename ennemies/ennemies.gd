@@ -10,12 +10,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var parent: Node2D = get_parent()
-	velocity = parent.global_position - global_position
-	velocity = velocity.normalized() * speed
+	#var parent: Node2D = get_parent()
+	#velocity = parent.global_position - global_position
+	#velocity = velocity.normalized() * speed
 	global_position += velocity * delta
-	if (parent.global_position - global_position).length() < 0.1 :
-		queue_free()
+	#if (parent.global_position - global_position).length() < 0.1 :
+		#queue_free()
 		
 func setup1():
 	speed = 50
