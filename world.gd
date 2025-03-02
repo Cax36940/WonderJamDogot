@@ -30,7 +30,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -86,7 +86,7 @@ func is_pos_free(pos : Vector2, width : int, height : int):
 		var min_pos : Vector2 = Vector2(min_x, min_y)
 		var max_pos : Vector2 = Vector2(max_x, max_y)
 
-		if overlap(aligned_pos, max_aligned_pos, Vector2(min_x, min_y), Vector2(max_x, max_y)):
+		if overlap(aligned_pos, max_aligned_pos, min_pos, max_pos):
 			return false
 	return true	
 
@@ -120,7 +120,7 @@ func clear_mouse_object():
 		child.queue_free()
 	
 func buy_object(string : String):
-	print(string)
+	#print(string)
 	for i in range(0, obstacle_name_list.size()):
 		if string == obstacle_name_list[i]:
 			clear_mouse_object()

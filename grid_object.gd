@@ -8,9 +8,6 @@ var cost 	: float = 1.
 var path_weight : float = 1.
 var attack 	: float = 1.
 var current_level : int = 1
-
-func play():
-	print("aaa")
 	
 func take_damage(damage : float):
 	health -= damage

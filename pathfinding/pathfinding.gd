@@ -9,7 +9,7 @@ var DebugArrowScene = preload("res://pathfinding/debugarrow.tscn")
 
 func _ready() -> void:
 	grid = Grid.new(Vector2(41,41))
-	print(grid.center)
+	#print(grid.center)
 	grid.init_grid()
 	grid.update_directions()
 	for y in range(grid.grid_size.y):
@@ -27,7 +27,7 @@ func _process(_delta) -> void:
 			child.velocity = Vector2i((grid.center * 16 - pos) * child.speed / 16)
 		else :
 			var curr_cell = grid.grid[pos_grid.y][pos_grid.x]
-			var old_velocity = child.velocity
+			#var old_velocity = child.velocity
 			child.velocity = curr_cell.direction * 16 * child.speed
 			if curr_cell == grid.grid[grid.center.y][grid.center.x]:
 				child.queue_free()

@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 		var rand_value = randf()
 		if (rand_value < spawn_rate):
 			spawn()
-		else :
-			print("NOT SPAWNING")
+		#else :
+			#print("NOT SPAWNING")
 		timer = ENNEMY_SPAWN_TIME
 		spawn_rate = min(spawn_rate + 0.1 * delta,1)
 	

@@ -16,7 +16,7 @@ var vitesseDeTire :float =0.5
 var liste_ennemi = []
 
 var place_cost : int = 10000
-var range : int = 200
+var tower_range : int = 200
 var damage : int = 1
 var hp : int = 200
 
@@ -24,13 +24,13 @@ func _ready() -> void:
 	width = 2
 	height = 2
 	attack = 100
-	detection_area.get_child(0).shape.radius = range
+	detection_area.get_child(0).shape.radius = tower_range
 	#detection_area.shape.radius = range
 	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	liste_ennemi = detection_area.get_overlapping_areas()
 	#$CanonDroit.look_at(get_global_mouse_position())
@@ -52,7 +52,7 @@ func shoot()-> void:
 		else:
 			instance.position = $AnimatedSprite2D/BoutDeCanon2.global_position - global_position
 			$AnimatedSprite2D.set_frame_and_progress( 0, 0 )
-		$AnimatedSprite2D.frame_changed
+
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
 		add_child(instance)
 		
