@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#timer -= delta
+	timer -= delta
 	if timer < 0 :
 		timer = ENNEMY_SPAWN_TIME
 		spawn()
