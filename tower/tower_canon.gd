@@ -33,14 +33,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	liste_ennemi = detection_area.get_overlapping_areas()
-	#$CanonDroit.look_at(get_global_mouse_position())
 	if !liste_ennemi.is_empty():
 		can_shoot = true
-		#timer -= delta
-		#if timer < 0 :
-		#	timer = vitesseDeTire
-		#	shoot()
-		
 		$CanonDroit.look_at(liste_ennemi[0].global_position)
 	else :
 		can_shoot = false

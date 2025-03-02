@@ -123,7 +123,6 @@ func buy_object(string : String):
 	print(string)
 	for i in range(0, obstacle_name_list.size()):
 		if string == obstacle_name_list[i]:
-
 			clear_mouse_object()
 			var instance : GridObject = obstacle_scene_list[i].instantiate()
 			instance.modulate.a = 0.5

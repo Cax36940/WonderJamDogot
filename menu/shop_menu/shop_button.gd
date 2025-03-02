@@ -10,7 +10,7 @@ func _ready() -> void:
 		cost = 100
 	elif self.name == "iconDoubleCanon":
 		cost = 10000
-	elif self.name == "iconLanceFlamme":
+	elif self.name == "iconLanceFlame":
 		cost = 1000000
 	elif self.name == "iconCanonPlasma":
 		cost = 100000000

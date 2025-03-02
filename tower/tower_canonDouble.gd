@@ -11,7 +11,6 @@ var weight_modif : 	float = 1.
 var attack_modif : 	float = 1.
 var range_modif : 	float = 1.
 var can_shoot: bool = false
-var timer =0.5
 var vitesseDeTire :float =0.5
 # Called when the node enters the scene tree for the first time.
 var liste_ennemi = []
@@ -37,15 +36,11 @@ func _process(delta: float) -> void:
 	#$CanonDroit.look_at(get_global_mouse_position())
 	if !liste_ennemi.is_empty():
 		can_shoot = true
-		timer -= delta
-		if timer < 0 :
-			timer = vitesseDeTire
-			shoot()
-		
 		$AnimatedSprite2D.look_at(liste_ennemi[0].global_position)
 	else :
 		can_shoot = false
-	
+
+
 func shoot()-> void:
 	if can_shoot :
 		var instance = bullet_ref.instantiate()
