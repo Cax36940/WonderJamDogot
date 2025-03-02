@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if direction.length() < 0.1:
+		queue_free()
 	position+= direction*delta*vitesse
 	if position.length() > 1000 :
 		queue_free()
