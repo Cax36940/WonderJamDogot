@@ -39,15 +39,14 @@ func spawn():
 			instance.position = Vector2(randf_range(-radius,radius),radius)
 		3: 
 			instance.position = Vector2(-radius,randf_range(-radius,radius))
-	
-	var random_ennemy: int = randi_range(0,3)
-	if random_ennemy == 0 :
-		instance.setup1()
-	elif random_ennemy == 1 :
-		instance.setup2()
-	elif random_ennemy == 2:
-		instance.setup3()
+	if (spawn_rate <= 0.3):
+		instance.setup(0)
+	elif (spawn_rate <= 0.5):
+		instance.setup(randi()%2)
+	elif (spawn_rate <= 0.7):
+		instance.setup(randi()%3)
 	else:
-		instance.setup4()
+		instance.setup(randi()%4)
+		
 	add_child(instance)
 	
