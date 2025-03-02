@@ -1,0 +1,194 @@
+[gd_scene load_steps=17 format=3 uid="uid://bo8ahutn742y2"]
+
+[ext_resource type="Texture2D" uid="uid://crjkn025nicar" path="res://sprite/END_SCREEN/PAGE_1.png" id="1_jnfcc"]
+[ext_resource type="Script" path="res://sprite/END_SCREEN/end_screen.gd" id="1_v8ems"]
+[ext_resource type="Texture2D" uid="uid://yq6wmui6cl5f" path="res://sprite/END_SCREEN/PAGE_2.png" id="2_4om0s"]
+[ext_resource type="Texture2D" uid="uid://b3biukvh00lqx" path="res://sprite/END_SCREEN/WHY.png" id="3_7o4p4"]
+[ext_resource type="Texture2D" uid="uid://bl5yu78ljn04p" path="res://sprite/END_SCREEN/WE_CAME_IN_PEACE.png" id="4_7xv44"]
+[ext_resource type="Texture2D" uid="uid://bf4dved4q1yyt" path="res://sprite/END_SCREEN/YOU MURDERED.png" id="5_sdjio"]
+[ext_resource type="Texture2D" uid="uid://buiclynlba6yp" path="res://sprite/END_SCREEN/MA FRIENDS.png" id="6_8bfy2"]
+
+[sub_resource type="Animation" id="Animation_r7v1m"]
+resource_name = "Page_1"
+length = 2.0175
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-76, -102), Vector2(-19, -102)]
+}
+
+[sub_resource type="Animation" id="Animation_o4js0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-76, -102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7w122"]
+_data = {
+"Page_1": SubResource("Animation_r7v1m"),
+"RESET": SubResource("Animation_o4js0")
+}
+
+[sub_resource type="Animation" id="Animation_sry1x"]
+resource_name = "Page_2_main"
+length = 0.4305
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(95, -102.75), Vector2(100, -102.75)]
+}
+
+[sub_resource type="Animation" id="Animation_jggh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-68.7777, -102.75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mih23"]
+_data = {
+"Page_2_main": SubResource("Animation_sry1x"),
+"RESET": SubResource("Animation_jggh3")
+}
+
+[sub_resource type="Animation" id="Animation_tikhn"]
+resource_name = "TEXT"
+length = 0.35
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-471, -311.766), Vector2(-467, -311.766)]
+}
+
+[sub_resource type="Animation" id="Animation_5blvr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-471, -311.766)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncctw"]
+_data = {
+"RESET": SubResource("Animation_5blvr"),
+"TEXT": SubResource("Animation_tikhn")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_v8ems")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(364, 407)
+offset = Vector2(21.885, -21.675)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Page_1" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-76, -102)
+scale = Vector2(0.95938, 0.95938)
+texture = ExtResource("1_jnfcc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Page_1"]
+libraries = {
+"": SubResource("AnimationLibrary_7w122")
+}
+autoplay = "Page_1"
+
+[node name="Page_2" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-68.7777, -102.75)
+scale = Vector2(0.972685, 0.972685)
+texture = ExtResource("2_4om0s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Page_2"]
+libraries = {
+"": SubResource("AnimationLibrary_mih23")
+}
+autoplay = "Page_2_main"
+
+[node name="texts" type="Node2D" parent="Camera2D/Page_2"]
+position = Vector2(-471, -311.766)
+scale = Vector2(0.865, 0.865)
+
+[node name="Why" type="Sprite2D" parent="Camera2D/Page_2/texts"]
+visible = false
+position = Vector2(465, 308)
+scale = Vector2(0.966667, 0.966667)
+texture = ExtResource("3_7o4p4")
+
+[node name="we came in peace" type="Sprite2D" parent="Camera2D/Page_2/texts"]
+position = Vector2(445, 294.5)
+scale = Vector2(0.958333, 0.958333)
+texture = ExtResource("4_7xv44")
+
+[node name="you murdered" type="Sprite2D" parent="Camera2D/Page_2/texts"]
+position = Vector2(460, 301.5)
+scale = Vector2(0.971296, 0.971296)
+texture = ExtResource("5_sdjio")
+
+[node name="my friends" type="Sprite2D" parent="Camera2D/Page_2/texts"]
+position = Vector2(458.889, 303.5)
+scale = Vector2(0.967593, 0.967593)
+texture = ExtResource("6_8bfy2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Page_2/texts"]
+root_node = NodePath("../Why")
+libraries = {
+"": SubResource("AnimationLibrary_ncctw")
+}
+autoplay = "TEXT"
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -750.0
+offset_top = 318.0
+offset_right = -436.0
+offset_bottom = 387.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "PRESS SPACE"
