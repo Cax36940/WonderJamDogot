@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0bmq18ur8vth"]
+
+[ext_resource type="Script" path="res://tower/fire_bullet.gd" id="1_4203x"]
+[ext_resource type="Texture2D" uid="uid://cf73jwj8uste8" path="res://sprite/tour/Flamme1.png" id="2_xovs0"]
+[ext_resource type="Texture2D" uid="uid://culorkekkwvn3" path="res://sprite/tour/Flamme2.png" id="3_2swfr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl2xv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xovs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2swfr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chmqg"]
+radius = 4.0
+height = 32.0
+
+[node name="FireBullet" type="Node2D"]
+script = ExtResource("1_4203x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rl2xv")
+frame_progress = 0.455122
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_chmqg")
+debug_color = Color(0, 0.607535, 0.654314, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

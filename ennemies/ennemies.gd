@@ -3,6 +3,8 @@ extends Node2D
 var velocity = Vector2.ZERO
 var speed = 50
 
+var life : float = 10.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,3 +35,9 @@ func setup3():
 func setup4():
 	speed = 7
 	$Icon.play("Flyer")
+
+func take_damage(damage : float):
+	life -= damage
+	if life < 0 :
+		GlobalNode.add_money()
+		queue_free()

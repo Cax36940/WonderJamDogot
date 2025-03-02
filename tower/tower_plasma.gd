@@ -1,22 +1,21 @@
-extends GridObject
-class_name TowerDoubleCanon
-
+extends GridObject 
+class_name TowerPlasma
 @onready var detection_area: Area2D = $DetectionArea
 #@onready var body: StaticBody2D = $Body
 #@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-var bullet_ref = preload("res://tower/bullet.tscn")
+var bullet_ref = preload("res://tower/plasma_bullet.tscn")
 var health_modif : 	float = 1.
 var cost_modif : 	float = 1.
 var weight_modif : 	float = 1.
 var attack_modif : 	float = 1.
 var range_modif : 	float = 1.
 var can_shoot: bool = false
-var timer =0.5
-var vitesseDeTire :float =0.5
+var timer =1
+var vitesseDeTire :float =1
 # Called when the node enters the scene tree for the first time.
 var liste_ennemi = []
 
-var place_cost : int = 10000
+var place_cost : int = 100000000
 var range : int = 200
 var damage : int = 1
 var hp : int = 200
@@ -24,7 +23,6 @@ var hp : int = 200
 func _ready() -> void:
 	width = 2
 	height = 2
-	attack = 100
 	detection_area.get_child(0).shape.radius = range
 	#detection_area.shape.radius = range
 	
@@ -37,32 +35,26 @@ func _process(delta: float) -> void:
 	#$CanonDroit.look_at(get_global_mouse_position())
 	if !liste_ennemi.is_empty():
 		can_shoot = true
-		timer -= delta
-		if timer < 0 :
-			timer = vitesseDeTire
-			shoot()
+		#timer -= delta
+		#if timer < 0 :
+		#	timer = vitesseDeTire
+		#	shoot()
 		
-		$AnimatedSprite2D.look_at(liste_ennemi[0].global_position)
+		$CanonPlasmaDroit.look_at(liste_ennemi[0].global_position)
 	else :
 		can_shoot = false
 	
-func shoot()-> void:
+func shoot() -> bool:
 	if can_shoot :
-		var instance = bullet_ref.instantiate()
 		var vecteur = Vector2(1,0)
-		vecteur= vecteur.rotated($AnimatedSprite2D.rotation)
-		if $AnimatedSprite2D.get_frame_progress() == 0:
-			instance.position = $AnimatedSprite2D/BoutDeCanon.global_position - global_position
-			$AnimatedSprite2D.set_frame_and_progress( 1, 1 )
-		else:
-			instance.position = $AnimatedSprite2D/BoutDeCanon2.global_position - global_position
-			$AnimatedSprite2D.set_frame_and_progress( 0, 0 )
-		$AnimatedSprite2D.frame_changed
+		vecteur= vecteur.rotated($CanonPlasmaDroit.rotation)
+		var instance = bullet_ref.instantiate()
+		instance.position = $CanonPlasmaDroit/BoutDeCanon.global_position - global_position
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
 		add_child(instance)
-		
-		
-		pass
+		return true
+	return false
+
 func lvl_up_health() -> void :
 	var tmp_modif : float = health_modif - current_level * 0.01
 	if tmp_modif < 1.05 :
