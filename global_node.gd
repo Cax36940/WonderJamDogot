@@ -2,7 +2,7 @@ extends Node
 
 # Quantite de coins de depart
 var coin_total : int = 1000000000
-var coin_total_float : float = 100.
+var coin_total_float : float = coin_total
 var increase_value : float = 1.
 var increase_factor : float = 1.01
 
