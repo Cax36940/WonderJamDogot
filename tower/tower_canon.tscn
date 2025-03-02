@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bt2n2epycvudf" path="res://sprite/tour/corps.png" id="2_0o3ik"]
 [ext_resource type="Texture2D" uid="uid://yegty5i3n6ac" path="res://sprite/tour/anneau.png" id="3_spjlx"]
 [ext_resource type="Texture2D" uid="uid://dmk52os4dlkbx" path="res://sprite/tour/canonDroit.png" id="4_b1bs0"]
-[ext_resource type="PackedScene" uid="uid://da3bp4xnce1ip" path="res://tower/detection_area.tscn" id="5_2nnju"]
+[ext_resource type="PackedScene" path="res://tower/detection_area.tscn" id="5_2nnju"]
 [ext_resource type="PackedScene" uid="uid://ciql3ga8rhef8" path="res://tower/bout_de_canon.tscn" id="6_vivjp"]
 
 [node name="TowerCanon" type="Node2D"]
