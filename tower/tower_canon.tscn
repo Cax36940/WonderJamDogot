@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2j1dqkuy8hjq"]
+
+[ext_resource type="Script" path="res://tower/tower_canon.gd" id="1_2p02b"]
+[ext_resource type="Texture2D" uid="uid://bt2n2epycvudf" path="res://sprite/tour/corps.png" id="2_0o3ik"]
+[ext_resource type="Texture2D" uid="uid://yegty5i3n6ac" path="res://sprite/tour/anneau.png" id="3_spjlx"]
+[ext_resource type="Texture2D" uid="uid://dmk52os4dlkbx" path="res://sprite/tour/canonDroit.png" id="4_b1bs0"]
+[ext_resource type="PackedScene" uid="uid://cojcvmpbox0f4" path="res://tower/detection_area.tscn" id="5_2nnju"]
+[ext_resource type="PackedScene" uid="uid://d1i813d2ae43h" path="res://tower/bout_de_canon.tscn" id="6_vivjp"]
+
+[node name="TowerCanon" type="Node2D"]
+script = ExtResource("1_2p02b")
+
+[node name="Corps" type="Sprite2D" parent="."]
+position = Vector2(0, -19.5)
+texture = ExtResource("2_0o3ik")
+
+[node name="Anneau" type="Sprite2D" parent="."]
+modulate = Color(0.278431, 0.611765, 0.0823529, 1)
+position = Vector2(0, -19.5)
+texture = ExtResource("3_spjlx")
+
+[node name="CanonDroit" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+texture = ExtResource("4_b1bs0")
+
+[node name="BoutDeCanon" parent="CanonDroit" instance=ExtResource("6_vivjp")]
+position = Vector2(20, -1)
+
+[node name="DetectionArea" parent="." instance=ExtResource("5_2nnju")]
+position = Vector2(0, -1)
+collision_layer = 2

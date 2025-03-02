@@ -2,9 +2,9 @@ extends Node2D
 
 const color: = Color(0.8, 0.8, 0.8, 0.1)
 
-@onready var camera: Camera2D = $"/root/Main/World/Camera"
+@onready var camera: Camera2D = $"../Camera"
 @onready var viewport: Viewport = get_viewport()
-@onready var grid_size: int = $"/root/Main/World".GRID_CELL_SIZE
+@onready var grid_size: int = $"..".GRID_CELL_SIZE
 
 func _draw():
 	var vp_size: Vector2 = viewport.get_visible_rect().size
