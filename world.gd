@@ -90,3 +90,6 @@ func overlap(min_pos1 : Vector2, max_pos1 : Vector2, min_pos2 : Vector2, max_pos
 	
 	return true
 	
+func buy_object(string):
+	print(string)
+	

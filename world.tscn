@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi422o21y7s82"]
+[gd_scene load_steps=8 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
-[ext_resource type="PackedScene" uid="uid://dwi20ek5nku6n" path="res://grid_sprite.tscn" id="2_8suw1"]
+[ext_resource type="PackedScene" path="res://grid_sprite.tscn" id="2_8suw1"]
 [ext_resource type="PackedScene" uid="uid://25ocrsgv466b" path="res://ennemies/spawner.tscn" id="2_n0e68"]
 [ext_resource type="Script" path="res://camera.gd" id="3_lexd8"]
-[ext_resource type="PackedScene" uid="uid://c2j1dqkuy8hjq" path="res://tower/tower_canon.tscn" id="3_o1h1v"]
-[ext_resource type="PackedScene" uid="uid://dxc2w3eq7jqtl" path="res://tower/tower_canonDouble.tscn" id="5_wkvil"]
+[ext_resource type="PackedScene" path="res://tower/tower_canon.tscn" id="3_o1h1v"]
+[ext_resource type="PackedScene" path="res://tower/tower_canonDouble.tscn" id="5_wkvil"]
+[ext_resource type="PackedScene" uid="uid://c8rha5ngjw3br" path="res://menu/shop_menu/shop_menu.tscn" id="7_wpsvj"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n6rbg")
@@ -29,3 +30,5 @@ position = Vector2(331, 257)
 
 [node name="TowerCanon" parent="." instance=ExtResource("3_o1h1v")]
 position = Vector2(328, 135)
+
+[node name="ShopMenu" parent="." instance=ExtResource("7_wpsvj")]
