@@ -24,6 +24,9 @@ func add_money(increase_value:float):
 	coin_total = int(coin_total_float)
 	increase_value *= increase_factor
 
-func remove_coin(value):
-	coin_total_float -= value
-	coin_total = int(coin_total_float)
+func remove_coin(value) -> bool:
+	if coin_total_float - value >= 0:
+		coin_total_float -= value
+		coin_total = int(coin_total_float)
+		return true
+	return false

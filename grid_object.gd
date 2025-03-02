@@ -15,11 +15,14 @@ func take_damage(damage : float):
 		pass
 
 func lvl_up() -> void :
-	lvl_up_health()
-	lvl_up_cost()
-	lvl_up_weight()
-	lvl_up_attack()
-	lvl_up_range()
+	if GlobalNode.remove_coin(cost):
+		lvl_up_health()
+		lvl_up_cost()
+		lvl_up_weight()
+		lvl_up_attack()
+		lvl_up_range()
+		current_level += 1
+	cost *= 1.1
 
 
 # Functions to override by children class

@@ -4,5 +4,6 @@
 [ext_resource type="Script" path="res://menu/bonus_menu/icon_upgrade.gd" id="2_0jqj4"]
 
 [node name="IconUpgrade" type="Sprite2D"]
+scale = Vector2(0.421875, 0.421875)
 texture = ExtResource("1_pa2e0")
 script = ExtResource("2_0jqj4")
