@@ -12,12 +12,12 @@ func _ready() -> void:
 	#print(grid.center)
 	grid.init_grid()
 	grid.update_directions()
-	for y in range(grid.grid_size.y):
-		for x in range(grid.grid_size.x):
-			var arrow:Node2D = DebugArrowScene.instantiate()
-			arrow.position = 16 * Vector2(x,y) + Vector2(8,8)
-			arrow.look_at(16 * Vector2(x + grid.grid[y][x].direction.x,y + grid.grid[y][x].direction.y))
-			add_child(arrow)
+	#for y in range(grid.grid_size.y):
+	#	for x in range(grid.grid_size.x):
+	#		var arrow:Node2D = DebugArrowScene.instantiate()
+	#		arrow.position = 16 * Vector2(x,y) + Vector2(8,8)
+	#		arrow.look_at(16 * Vector2(x + grid.grid[y][x].direction.x,y + grid.grid[y][x].direction.y))
+	#		add_child(arrow)
 
 func _process(_delta) -> void:
 	for child in spawner.get_children():
