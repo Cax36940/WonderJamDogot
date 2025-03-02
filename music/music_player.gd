@@ -4,16 +4,15 @@ extends Node2D
 var kick_list  : Array[int] = [1,0,0,0,  1,0,0,0,  1,0,0,0,  1,0,0,0,  1,0,0,0,  1,0,0,0,  1,0,0,0,  1,0,0,0]
 var bass1_list : Array[int] = [1,0,0,0,  0,0,0,0,  0,0,0,0,  0,0,0,0,  1,0,0,0,  0,0,0,0,  0,0,0,0,  1,0,0,0]
 var bass2_list : Array[int] = [0,0,0,0,  0,0,0,0,  1,0,0,0,  0,0,0,0,  0,0,0,0,  0,0,0,0,  0,0,0,0,  0,0,0,0]
-var hihat_list : Array[int] = [0,0,0,0,  1,0,0,0,  0,0,0,0,  1,0,0,0,  0,0,0,0,  1,0,0,0,  0,0,0,0,  1,0,0,0]
+var hihat_list : Array[int] = [1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1]
 
 var current_bar = 0
 
 @onready var grid_object_container : Node2D = $"../GridObjectContainer"
 
-const TEMPO : int = 140
 const BAR_PER_SEC : int = 32
 const FULL_BAR_LENGTH : float = 1.75
-const BAR_LENGTH : float = 1.75 / 16
+const BAR_LENGTH : float = FULL_BAR_LENGTH / 16
 var timer = BAR_LENGTH
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,8 +50,10 @@ func kick():
 			if child is TowerCanon :
 				if child.shoot() :
 					db += 1
-					
-		$Kick.volume_db = min(db, 20)
+		if db == 0:
+			$Kick.volume_db = -20
+		else :
+			$Kick.volume_db = min(db, 20)
 		$Kick.play()
 
 func bass1():
@@ -63,8 +64,11 @@ func bass1():
 			if child is TowerDoubleCanon :
 				if child.shoot() :
 					db += 1
-					
-		$Bass1.volume_db = min(db, 20)
+		
+		if db == 0:
+			$Bass1.volume_db = -20
+		else :
+			$Bass1.volume_db = min(db, 20)
 		$Bass1.play()
 		
 func bass2():
@@ -75,8 +79,10 @@ func bass2():
 			if child is TowerFire :
 				if child.shoot() :
 					db += 1
-					
-		$Bass2.volume_db = min(db, 20)
+		if db == 0:
+			$Bass2.volume_db = -20
+		else :
+			$Bass2.volume_db = min(db, 20)
 		$Bass2.play()
 
 func hihat():
@@ -87,6 +93,8 @@ func hihat():
 			if child is TowerPlasma :
 				if child.shoot() :
 					db += 1
-					
-		$Hihat.volume_db = min(db, 20)
+		if db == 0:
+			$Hihat.volume_db = -20
+		else :
+			$Hihat.volume_db = min(db, 20)
 		$Hihat.play()

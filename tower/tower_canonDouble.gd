@@ -23,7 +23,7 @@ var hp : int = 200
 func _ready() -> void:
 	width = 2
 	height = 2
-	attack = 100
+	attack = 10
 	detection_area.get_child(0).shape.radius = tower_range
 	#detection_area.shape.radius = range
 	
@@ -53,6 +53,7 @@ func shoot()-> void:
 			instance.position = $AnimatedSprite2D/BoutDeCanon2.global_position - global_position
 			$AnimatedSprite2D.set_frame_and_progress( 0, 0 )
 
+		instance.attack = attack
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
 		add_child(instance)
 		

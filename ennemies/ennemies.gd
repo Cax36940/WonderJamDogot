@@ -3,7 +3,7 @@ extends Node2D
 var velocity = Vector2.ZERO
 var speed = 50
 
-var life : float = 10.0
+var life : float = 5.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,12 +29,15 @@ func setup(n:int):
 			$Icon.play("Crawler")
 		1:
 			speed = 4
+			life = 15.0
 			$Icon.play("Ball")
 		2:
 			speed = 0.5
+			life = 50.0
 			$Icon.play("Mecha")
 		3:
 			speed = 7
+			life = 10.0
 			$Icon.play("Flyer")
 		_:
 			speed = 2
