@@ -24,7 +24,8 @@ func _process(_delta) -> void:
 	for child in spawner.get_children():
 		var curr_cell = grid.grid[int(child.global_position.y / 16)][int(child.global_position.x / 16)]
 		var old_velocity = child.velocity
-		child.velocity = curr_cell.direction * 16
+		child.velocity = curr_cell.direction * 16 * child.speed
+		
 		if old_velocity != child.velocity:
 			print(int(child.global_position.y / 16)," ",int(child.global_position.x / 16))
 			print("NNNNNo")
