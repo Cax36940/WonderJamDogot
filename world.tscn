@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxkrx8581pt2k" path="res://tower/tower_canon.tscn" id="3_o1h1v"]
 [ext_resource type="PackedScene" uid="uid://mkojoc68cgue" path="res://pathfinding/pathfinding.tscn" id="4_lna7t"]
 [ext_resource type="PackedScene" uid="uid://vywsr673wqme" path="res://tower/tower_canonDouble.tscn" id="5_wkvil"]
-[ext_resource type="PackedScene" uid="uid://dlvu2l452pa4m" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
+[ext_resource type="PackedScene" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
 [ext_resource type="PackedScene" uid="uid://c8rha5ngjw3br" path="res://menu/shop_menu/shop_menu.tscn" id="9_4v3h7"]
 [ext_resource type="PackedScene" uid="uid://djjionukw6erg" path="res://music/music_player.tscn" id="10_3tccu"]
 

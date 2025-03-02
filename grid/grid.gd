@@ -30,6 +30,9 @@ func update_directions() -> void:
 		
 func distance_to_center(x:int,y:int):
 	return abs(x - center.x) + abs(y-center.y)
+
+func update_weight(x:int,y:int,weight:int):
+	grid[y][x].weight = distance_to_center(x,y) + weight
 	
 func compute_best_neighbour(coords:Vector2) -> Vector2:
 	
