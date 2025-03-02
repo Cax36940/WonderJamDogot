@@ -52,7 +52,7 @@ func kick():
 				if child.shoot() :
 					db += 1
 					
-		#$Kick.volume_db = db
+		$Kick.volume_db = min(db, 20)
 		$Kick.play()
 	
 func bass1():
