@@ -12,10 +12,9 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED;
 	btn_start.pressed.connect(_on_start_pressed);
 	btn_quit.pressed.connect(_on_quit_pressed);
-
 	
-	# Jouer la musique si un fichier est assigné
 	if music_player.stream:
+		music_player.stream.loop = true  # Active la boucle
 		music_player.play()
 
 	if GlobalNode.pacifiste:

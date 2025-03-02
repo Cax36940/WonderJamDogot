@@ -3,6 +3,8 @@ extends Node2D
 @onready var page_1: Sprite2D = $Camera2D/Page_1
 @onready var page_2: Sprite2D = $Camera2D/Page_2
 @onready var texts: Node2D = $Camera2D/Page_2/texts
+@onready var music_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 var scene_progression = 0
 
@@ -10,8 +12,10 @@ var timer_start:bool = false
 var timer :float = 4
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	# Vérifie si une musique est assignée et active la boucle
+	if music_player.stream:
+		music_player.stream.loop = true  # Active la boucle
+		music_player.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
