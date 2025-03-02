@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c57gy16886uwq"]
+
+[ext_resource type="Texture2D" uid="uid://crwlmoyd5wroh" path="res://sprite/shop/iconDelete.png" id="1_4qt21"]
+[ext_resource type="Script" path="res://menu/bonus_menu/icon_delete.gd" id="2_n0vt7"]
+
+[node name="IconDelete" type="Sprite2D"]
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("1_4qt21")
+script = ExtResource("2_n0vt7")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlvb7slwkarh1"]
+
+[ext_resource type="Texture2D" uid="uid://2j0pmi0w1nt8" path="res://sprite/shop/iconUpgrade.png" id="1_pa2e0"]
+[ext_resource type="Script" path="res://menu/bonus_menu/icon_upgrade.gd" id="2_0jqj4"]
+
+[node name="IconUpgrade" type="Sprite2D"]
+texture = ExtResource("1_pa2e0")
+script = ExtResource("2_0jqj4")

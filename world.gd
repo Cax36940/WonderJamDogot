@@ -14,8 +14,11 @@ var canon_double_tower_scene = preload("res://tower/tower_canonDouble.tscn")
 var fire_tower_scene = preload("res://tower/tower_fire.tscn")
 var plasma_tower_scene = preload("res://tower/tower_plasma.tscn")
 
-var obstacle_name_list : Array[String] = ["iconCanon", "iconDoubleCanon", "iconLanceFlame", "iconCanonPlasma"]
-var obstacle_scene_list = [canon_tower_scene, canon_double_tower_scene, fire_tower_scene, plasma_tower_scene]
+var delete_scene = preload("res://menu/bonus_menu/icon_delete.tscn")
+var upgrade_scene = preload("res://menu/bonus_menu/icon_upgrade.tscn")
+
+var obstacle_name_list : Array[String] = ["iconCanon", "iconDoubleCanon", "iconLanceFlame", "iconCanonPlasma", "DeleteButton", "UpgradeButton"]
+var obstacle_scene_list = [canon_tower_scene, canon_double_tower_scene, fire_tower_scene, plasma_tower_scene, delete_scene, upgrade_scene]
 
 const GRID_CELL_SIZE : int = 16
 const GRID_HALF_CELL_SIZE : int = 8
@@ -37,14 +40,33 @@ func _process(_delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		if mouse_object_container.get_child_count() > 0:
-			var object : GridObject = mouse_object_container.get_child(0)
-			object.position = align_on_grid(get_global_mouse_position(), object.width, object.height)
-			mouse_object_container.visible = is_pos_free(get_global_mouse_position(), object.width, object.height)
-			mouse_object_container.z_index = int(object.position.y / 16)
-			if Input.is_action_pressed("mouse_click"):
-				spawn_object_at_pos(get_global_mouse_position())
+			var object = mouse_object_container.get_child(0)
+			if object is GridObject :
+				object.position = align_on_grid(get_global_mouse_position(), object.width, object.height)
+				mouse_object_container.visible = is_pos_free(get_global_mouse_position(), object.width, object.height)
+				mouse_object_container.z_index = int(object.position.y / 16)
+				if Input.is_action_pressed("mouse_click"):
+					spawn_object_at_pos(get_global_mouse_position())
+			else :
+				object.position = get_global_mouse_position()
+				mouse_object_container.visible = true
+				#mouse_object_container.visible = !is_pos_free(get_global_mouse_position(), 1, 1)
+				mouse_object_container.z_index = int(object.position.y / 16) + 1
+				if Input.is_action_pressed("mouse_click"):
+					if object is DeleteObject :
+						delete_at_pos(get_global_mouse_position())
+				
+				
 	if Input.is_action_just_pressed("mouse_click"):
-		spawn_object_at_pos(get_global_mouse_position())
+		if mouse_object_container.get_child_count() > 0:
+			var object = mouse_object_container.get_child(0)
+			if object is GridObject :
+				spawn_object_at_pos(get_global_mouse_position())
+			else :
+				if object is DeleteObject :
+					delete_at_pos(get_global_mouse_position())
+				#if object is UpgradeObject :
+				#	upgrade_at_pos(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("mouse_cancel"):
 		if mouse_object_container.get_child_count() > 0:
@@ -106,6 +128,15 @@ func spawn_object_at_pos(pos : Vector2):
 				grid_object_container.add_child(instance)
 				pathfinding.update_weights()
 
+func delete_at_pos(pos : Vector2):
+	if mouse_object_container.get_child_count() > 0 :
+		var object = mouse_object_container.get_child(0)
+		if object is DeleteObject:
+			for child : GridObject in grid_object_container.get_children():
+				if child.position.x - 16 < pos.x and pos.x < child.position.x + 16 and child.position.y - 16 < pos.y and pos.y < child.position.y + 16:
+					GlobalNode.add_money_value(child.place_cost * 0.75)
+					child.queue_free()
+
 func overlap(min_pos1 : Vector2, max_pos1 : Vector2, min_pos2 : Vector2, max_pos2 : Vector2):
 	if min_pos1.x >= max_pos2.x or min_pos2.x >= max_pos1.x :
 		return false
@@ -121,9 +152,10 @@ func clear_mouse_object():
 	
 func buy_object(string : String):
 	#print(string)
+	clear_mouse_object()
 	for i in range(0, obstacle_name_list.size()):
 		if string == obstacle_name_list[i]:
 			clear_mouse_object()
-			var instance : GridObject = obstacle_scene_list[i].instantiate()
+			var instance = obstacle_scene_list[i].instantiate()
 			instance.modulate.a = 0.5
 			mouse_object_container.add_child(instance)
