@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b5jwqgvho55le" path="res://sprite/Aliens/Giant_Roller/Giant_roller.png" id="4_hlncj"]
 [ext_resource type="Texture2D" uid="uid://bkse8bnv412xi" path="res://sprite/Aliens/Flying/Flyer.png" id="4_mu8bb"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dcdj"]
 atlas = ExtResource("2_62f0v")
 region = Rect2(0, 0, 64, 64)
