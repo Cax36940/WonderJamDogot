@@ -7,7 +7,7 @@ class_name PathFinding extends Node2D
 var DebugArrowScene = preload("res://pathfinding/debugarrow.tscn")
 
 func _ready() -> void:
-	grid = Grid.new(Vector2(40,40))
+	grid = Grid.new(Vector2(41,41))
 	print(grid.center)
 	grid.init_grid()
 	grid.update_directions()

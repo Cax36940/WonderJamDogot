@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi422o21y7s82"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
+[ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
+[ext_resource type="PackedScene" uid="uid://25ocrsgv466b" path="res://ennemies/spawner.tscn" id="2_n0e68"]
+[ext_resource type="Script" path="res://camera.gd" id="3_lexd8"]
+[ext_resource type="PackedScene" uid="uid://dlvu2l452pa4m" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
+[ext_resource type="Texture2D" uid="uid://b3x8ea25yemf3" path="res://icon.svg" id="6_pt5pe"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_n6rbg")
+
+[node name="GridSprite" parent="." instance=ExtResource("2_8suw1")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(400, 400)
+position_smoothing_enabled = true
+script = ExtResource("3_lexd8")
+
+[node name="MouseObjectContainer" type="Node2D" parent="."]
+
+[node name="GridObjectContainer" type="Node2D" parent="."]
+
+[node name="Spawner" parent="." instance=ExtResource("2_n0e68")]
+position = Vector2(408, 408)
+
+[node name="Background" parent="." instance=ExtResource("5_wxdmg")]
+position = Vector2(408, 408)
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("6_pt5pe")

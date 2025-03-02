@@ -1,20 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi422o21y7s82"]
+[gd_scene load_steps=10 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
-[ext_resource type="PackedScene" uid="uid://5a0oqdy4xgx8" path="res://grid_sprite.tscn" id="2_8suw1"]
+[ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
 [ext_resource type="PackedScene" uid="uid://25ocrsgv466b" path="res://ennemies/spawner.tscn" id="2_n0e68"]
 [ext_resource type="Script" path="res://camera.gd" id="3_lexd8"]
 [ext_resource type="PackedScene" path="res://tower/tower_canon.tscn" id="3_o1h1v"]
 [ext_resource type="PackedScene" uid="uid://mkojoc68cgue" path="res://pathfinding/pathfinding.tscn" id="4_lna7t"]
 [ext_resource type="PackedScene" path="res://tower/tower_canonDouble.tscn" id="5_wkvil"]
+[ext_resource type="PackedScene" uid="uid://dlvu2l452pa4m" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
+[ext_resource type="PackedScene" uid="uid://c8rha5ngjw3br" path="res://menu/shop_menu/shop_menu.tscn" id="9_4v3h7"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n6rbg")
 
+[node name="Background" parent="." instance=ExtResource("5_wxdmg")]
+position = Vector2(288, 288)
+
 [node name="GridSprite" parent="." instance=ExtResource("2_8suw1")]
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(400, 400)
+position = Vector2(328, 328)
 position_smoothing_enabled = true
 script = ExtResource("3_lexd8")
 
@@ -23,12 +28,14 @@ script = ExtResource("3_lexd8")
 [node name="GridObjectContainer" type="Node2D" parent="."]
 
 [node name="Spawner" parent="." instance=ExtResource("2_n0e68")]
-position = Vector2(327, 185)
-
-[node name="TowerCanon2" parent="." instance=ExtResource("5_wkvil")]
-position = Vector2(331, 257)
-
-[node name="TowerCanon" parent="." instance=ExtResource("3_o1h1v")]
-position = Vector2(328, 135)
+position = Vector2(328, 328)
 
 [node name="Pathfinding" parent="." instance=ExtResource("4_lna7t")]
+
+[node name="TowerCanon" parent="." instance=ExtResource("3_o1h1v")]
+position = Vector2(333, 252)
+
+[node name="TowerCanon2" parent="." instance=ExtResource("5_wkvil")]
+position = Vector2(287, 478)
+
+[node name="ShopMenu" parent="." instance=ExtResource("9_4v3h7")]

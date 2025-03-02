@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlvu2l452pa4m"]
+
+[ext_resource type="Script" path="res://sprite/Background/background.gd" id="1_0ummd"]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_0ummd")
+
+[node name="Sprite" type="Sprite2D" parent="."]
