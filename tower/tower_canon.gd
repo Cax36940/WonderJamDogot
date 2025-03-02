@@ -23,6 +23,7 @@ var hp : int = 200
 func _ready() -> void:
 	width = 2
 	height = 2
+	attack = 5
 	path_weight = 100
 	detection_area.get_child(0).shape.radius = tower_range
 	#detection_area.shape.radius = range
@@ -46,6 +47,7 @@ func shoot() -> bool:
 		var instance = bullet_ref.instantiate()
 		instance.position = $CanonDroit/BoutDeCanon.global_position - global_position
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
+		instance.attack = attack
 		add_child(instance)
 		return true
 	return false
