@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://btssq3pg03ul0"]
+
+[ext_resource type="Script" path="res://sprite/Roi/roi.gd" id="1_5avuy"]
+[ext_resource type="Texture2D" uid="uid://bhiu2x7g2ukam" path="res://sprite/Roi/Roi.png" id="2_nt3th"]
+
+[sub_resource type="Animation" id="Animation_2wtsv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Roi:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xpm3l"]
+resource_name = "RoiIdle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Roi:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.433333, 0.6, 0.8, 1.26667, 1.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_akcqj"]
+_data = {
+"RESET": SubResource("Animation_2wtsv"),
+"RoiIdle": SubResource("Animation_xpm3l")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vln6h"]
+size = Vector2(24, 35)
+
+[node name="Node2D" type="Node2D"]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_5avuy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_akcqj")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 5
+visibility_layer = 5
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1, -11)
+shape = SubResource("RectangleShape2D_vln6h")
+
+[node name="Roi" type="Sprite2D" parent="."]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(13, -17)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_nt3th")
+hframes = 8
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://dk1jkxnnd418q"]
 
 [ext_resource type="Script" path="res://ennemies/ennemies.gd" id="1_24r05"]
-[ext_resource type="Texture2D" uid="uid://fnibxspffci0" path="res://sprite/Aliens/Ball_man/BallMan.png" id="2_62f0v"]
-[ext_resource type="Texture2D" uid="uid://6gbanhgigtv0" path="res://sprite/Aliens/Tentacle_crawler/Tentacle_crawler_SpriteSheet.png" id="2_orrsq"]
-[ext_resource type="Texture2D" uid="uid://b5jwqgvho55le" path="res://sprite/Aliens/Giant_Roller/Giant_roller.png" id="4_hlncj"]
-[ext_resource type="Texture2D" uid="uid://bkse8bnv412xi" path="res://sprite/Aliens/Flying/Flyer.png" id="4_mu8bb"]
+[ext_resource type="Texture2D" uid="uid://cmxi4l48p0ggg" path="res://sprite/Aliens/Ball_man/BallMan.png" id="2_62f0v"]
+[ext_resource type="Texture2D" uid="uid://d0e8qcgxw5cnb" path="res://sprite/Aliens/Tentacle_crawler/Tentacle_crawler_SpriteSheet.png" id="2_orrsq"]
+[ext_resource type="Texture2D" uid="uid://o5w2vsp2bi3a" path="res://sprite/Aliens/Giant_Roller/Giant_roller.png" id="4_hlncj"]
+[ext_resource type="Texture2D" uid="uid://6ex1h5consts" path="res://sprite/Aliens/Flying/Flyer.png" id="4_mu8bb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dcdj"]
 atlas = ExtResource("2_62f0v")
@@ -137,6 +137,10 @@ animation = &"Flyer"
 frame_progress = 0.780433
 
 [node name="Area2D" type="Area2D" parent="."]
+light_mask = 5
+visibility_layer = 5
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
