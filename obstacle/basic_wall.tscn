@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://obstacle/basic_wall.gd" id="1_fysmo"]
 [ext_resource type="Texture2D" uid="uid://b3x8ea25yemf3" path="res://icon.svg" id="2_4fw7g"]
-[ext_resource type="PackedScene" path="res://tower/detection_area.tscn" id="3_nhuf3"]
+[ext_resource type="PackedScene" uid="uid://da3bp4xnce1ip" path="res://tower/detection_area.tscn" id="3_nhuf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5pc0"]
 size = Vector2(16, 16)
