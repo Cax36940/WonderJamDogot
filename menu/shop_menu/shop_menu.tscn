@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8rha5ngjw3br"]
+[gd_scene load_steps=11 format=3 uid="uid://c8rha5ngjw3br"]
 
 [ext_resource type="Texture2D" uid="uid://2tiypgk1o5h0" path="res://sprite/Bouton/shop_button.png" id="1_pqsj3"]
 [ext_resource type="Script" path="res://menu/shop_menu/shop_button.gd" id="2_3t67b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://qoge0adi41f7" path="res://sprite/shop/iconDoubleCanon.png" id="7_ttqcd"]
 [ext_resource type="Texture2D" uid="uid://cndqr5fxt07gr" path="res://sprite/shop/iconLanceFlamme.png" id="8_u8n1y"]
 [ext_resource type="Texture2D" uid="uid://cvj5miq685wap" path="res://sprite/shop/iconCanonPlasma.png" id="9_necqf"]
+[ext_resource type="Texture2D" uid="uid://bfhy5jm2ju767" path="res://sprite/barriere/iconBarriere.png" id="10_cllt0"]
 
 [node name="ShopMenu" type="Control"]
 layout_mode = 3
@@ -21,15 +22,17 @@ grow_vertical = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Shop" type="ScrollContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.836
+anchor_right = 0.999
 anchor_bottom = 1.0
-offset_left = 669.0
+offset_left = 0.199951
 offset_top = 3.0
-offset_right = -1.0
-offset_bottom = 2.0
+offset_right = 3.79993
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
+vertical_scroll_mode = 2
 
 [node name="ShopColumn" type="VBoxContainer" parent="CanvasLayer/Shop"]
 layout_mode = 2
@@ -182,7 +185,43 @@ text = "100 c"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="iconBarriere" type="TextureButton" parent="CanvasLayer/Shop/ShopColumn" groups=["ShopButtons"]]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource("1_pqsj3")
+texture_pressed = ExtResource("2_dv3bh")
+texture_hover = ExtResource("3_et80b")
+texture_disabled = ExtResource("4_a7q0x")
+script = ExtResource("2_3t67b")
+
+[node name="Barriere" type="TextureRect" parent="CanvasLayer/Shop/ShopColumn/iconBarriere"]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 134.0
+offset_bottom = 127.0
+texture = ExtResource("10_cllt0")
+
+[node name="Label" type="Label" parent="CanvasLayer/Shop/ShopColumn/iconBarriere/Barriere"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.518
+offset_top = -34.0
+offset_right = 18.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "5 c"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanon" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" to="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconLanceFlamme" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanonPlasma" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconBarriere" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
