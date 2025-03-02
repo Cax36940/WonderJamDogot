@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dct8gm5euhbjd"]
 
 [ext_resource type="Script" path="res://sprite/Roi/roi.gd" id="1_5avuy"]
-[ext_resource type="Texture2D" uid="uid://bsa4u1r18le2t" path="res://sprite/Roi/Roi.png" id="2_nt3th"]
+[ext_resource type="Texture2D" uid="uid://dvweve0bi8ykg" path="res://sprite/Roi/Roi.png" id="2_nt3th"]
 
 [sub_resource type="Animation" id="Animation_2wtsv"]
 length = 0.001

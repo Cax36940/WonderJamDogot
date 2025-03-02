@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://djjionukw6erg"]
 
 [ext_resource type="Script" path="res://music/music_player.gd" id="1_g5xci"]
-[ext_resource type="AudioStream" uid="uid://ct0lxntt5245n" path="res://music/kick.wav" id="2_tnoh3"]
-[ext_resource type="AudioStream" uid="uid://bdwpnrrb5kc4b" path="res://music/bass1.wav" id="3_0ck46"]
-[ext_resource type="AudioStream" uid="uid://ctlirdy35iptb" path="res://music/bass2.wav" id="4_88kee"]
-[ext_resource type="AudioStream" uid="uid://bv01mdwklqqh4" path="res://music/hihat.wav" id="5_cxej5"]
+[ext_resource type="AudioStream" uid="uid://cts73owogdove" path="res://music/kick.wav" id="2_tnoh3"]
+[ext_resource type="AudioStream" uid="uid://duywfunxtb7k8" path="res://music/bass1.wav" id="3_0ck46"]
+[ext_resource type="AudioStream" uid="uid://cs3leskioojvj" path="res://music/bass2.wav" id="4_88kee"]
+[ext_resource type="AudioStream" uid="uid://3sx68out5p7o" path="res://music/hihat.wav" id="5_cxej5"]
 
 [sub_resource type="Animation" id="Animation_v7ng2"]
 resource_name = "Kick"
