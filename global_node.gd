@@ -2,7 +2,7 @@ extends Node
 
 # Quantite de coins de depart
 var coin_total : int = 1000000000
-var coin_total_float : float = 100.
+var coin_total_float : float = coin_total
 var increase_value : float = 1.
 var increase_factor : float = 1.01
 
@@ -12,10 +12,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func add_money():
 	coin_total_float += increase_value
 	coin_total = int(coin_total_float)
 	increase_value *= increase_factor
+
+func remove_coin(value):
+	coin_total_float -= value
+	coin_total = int(coin_total_float)

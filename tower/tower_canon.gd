@@ -16,30 +16,25 @@ var vitesseDeTire :float =1
 var liste_ennemi = []
 
 var place_cost : int = 100
-var range : int = 200
+var tower_range : int = 200
 var damage : int = 1
 var hp : int = 200
 
 func _ready() -> void:
 	width = 2
 	height = 2
-	detection_area.get_child(0).shape.radius = range
+	path_weight = 100
+	detection_area.get_child(0).shape.radius = tower_range
 	#detection_area.shape.radius = range
 	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	liste_ennemi = detection_area.get_overlapping_areas()
-	#$CanonDroit.look_at(get_global_mouse_position())
 	if !liste_ennemi.is_empty():
 		can_shoot = true
-		#timer -= delta
-		#if timer < 0 :
-		#	timer = vitesseDeTire
-		#	shoot()
-		
 		$CanonDroit.look_at(liste_ennemi[0].global_position)
 	else :
 		can_shoot = false

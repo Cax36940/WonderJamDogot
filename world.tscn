@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi422o21y7s82"]
+[gd_scene load_steps=10 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
 [ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mkojoc68cgue" path="res://pathfinding/pathfinding.tscn" id="4_lna7t"]
 [ext_resource type="PackedScene" uid="uid://dlvu2l452pa4m" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
 [ext_resource type="PackedScene" uid="uid://c8rha5ngjw3br" path="res://menu/shop_menu/shop_menu.tscn" id="9_4v3h7"]
+[ext_resource type="PackedScene" uid="uid://btssq3pg03ul0" path="res://sprite/Roi/Roi.tscn" id="9_hv7dp"]
 [ext_resource type="PackedScene" uid="uid://djjionukw6erg" path="res://music/music_player.tscn" id="10_3tccu"]
 
 [node name="World" type="Node2D"]
@@ -34,3 +35,6 @@ position = Vector2(328, 328)
 [node name="ShopMenu" parent="." instance=ExtResource("9_4v3h7")]
 
 [node name="MusicPlayer" parent="." instance=ExtResource("10_3tccu")]
+
+[node name="Node2D" parent="." instance=ExtResource("9_hv7dp")]
+position = Vector2(329, 335)

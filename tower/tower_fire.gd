@@ -15,7 +15,7 @@ var vitesseDeTire :float =1
 var liste_ennemi = []
 
 var place_cost : int = 1000000
-var range : int = 200
+var tower_range : int = 200
 var damage : int = 1
 var hp : int = 200
 
@@ -23,10 +23,10 @@ func _ready() -> void:
 	width = 2
 	height = 2
 	attack = 1000
-	detection_area.get_child(0).shape.radius = range
+	detection_area.get_child(0).shape.radius = tower_range
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	liste_ennemi = detection_area.get_overlapping_areas()
 	if !liste_ennemi.is_empty():
@@ -43,6 +43,7 @@ func shoot() -> bool:
 		var instance = bullet_ref.instantiate()
 		instance.position = $LanceFlammeDroit/BoutDeCanon.global_position - global_position
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
+		instance.rotation = $LanceFlammeDroit.rotation
 		instance.attack = attack
 		add_child(instance)
 		return true

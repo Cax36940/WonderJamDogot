@@ -47,4 +47,4 @@ func _ready():
 	# Save image
 	#big_image.save_png("res://output.png")
 	sprite.texture = ImageTexture.create_from_image(big_image)
-	print(sprite.texture.get_size())
+	#print(sprite.texture.get_size())

@@ -11,13 +11,12 @@ var weight_modif : 	float = 1.
 var attack_modif : 	float = 1.
 var range_modif : 	float = 1.
 var can_shoot: bool = false
-var timer =0.5
 var vitesseDeTire :float =0.5
 # Called when the node enters the scene tree for the first time.
 var liste_ennemi = []
 
 var place_cost : int = 10000
-var range : int = 200
+var tower_range : int = 200
 var damage : int = 1
 var hp : int = 200
 
@@ -25,27 +24,23 @@ func _ready() -> void:
 	width = 2
 	height = 2
 	attack = 100
-	detection_area.get_child(0).shape.radius = range
+	detection_area.get_child(0).shape.radius = tower_range
 	#detection_area.shape.radius = range
 	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	liste_ennemi = detection_area.get_overlapping_areas()
 	#$CanonDroit.look_at(get_global_mouse_position())
 	if !liste_ennemi.is_empty():
 		can_shoot = true
-		timer -= delta
-		if timer < 0 :
-			timer = vitesseDeTire
-			shoot()
-		
 		$AnimatedSprite2D.look_at(liste_ennemi[0].global_position)
 	else :
 		can_shoot = false
-	
+
+
 func shoot()-> void:
 	if can_shoot :
 		var instance = bullet_ref.instantiate()
@@ -57,7 +52,7 @@ func shoot()-> void:
 		else:
 			instance.position = $AnimatedSprite2D/BoutDeCanon2.global_position - global_position
 			$AnimatedSprite2D.set_frame_and_progress( 0, 0 )
-		$AnimatedSprite2D.frame_changed
+
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
 		add_child(instance)
 		

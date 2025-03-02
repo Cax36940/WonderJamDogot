@@ -9,7 +9,7 @@ var DebugArrowScene = preload("res://pathfinding/debugarrow.tscn")
 
 func _ready() -> void:
 	grid = Grid.new(Vector2(41,41))
-	print(grid.center)
+	#print(grid.center)
 	grid.init_grid()
 	grid.update_directions()
 	for y in range(grid.grid_size.y):
@@ -21,17 +21,16 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	for child in spawner.get_children():
-		var curr_cell = grid.grid[int(child.global_position.y / 16)][int(child.global_position.x / 16)]
-		var old_velocity = child.velocity
-		child.velocity = curr_cell.direction * 16 * child.speed
-		
-		if old_velocity != child.velocity:
-			print(int(child.global_position.y / 16)," ",int(child.global_position.x / 16))
-			print("NNNNNo")
-			print(curr_cell.direction)
-		#print(child.velocity)
-		if curr_cell == grid.grid[grid.center.y][grid.center.x]:
-			child.queue_free()
+		var pos = child.global_position
+		var pos_grid = Vector2(int(pos.x/16),int(pos.y/16))
+		if not grid.is_in_grid(pos_grid):
+			child.velocity = Vector2i((grid.center * 16 - pos) * child.speed / 16)
+		else :
+			var curr_cell = grid.grid[pos_grid.y][pos_grid.x]
+			#var old_velocity = child.velocity
+			child.velocity = curr_cell.direction * 16 * child.speed
+			if curr_cell == grid.grid[grid.center.y][grid.center.x]:
+				child.queue_free()
 			
 func update_weights() -> void:
 	var grid_objects = object_container.get_children()

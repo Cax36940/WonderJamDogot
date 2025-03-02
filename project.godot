@@ -26,10 +26,6 @@ window/size/viewport_width=800
 window/size/viewport_height=800
 window/stretch/mode="canvas_items"
 
-[global_group]
-
-ShopButtons=""
-
 [input]
 
 mouse_click={

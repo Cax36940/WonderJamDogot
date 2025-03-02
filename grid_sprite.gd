@@ -8,9 +8,9 @@ const color: = Color(0.8, 0.8, 0.8, 0.1)
 
 func _draw():
 	var vp_size: Vector2 = viewport.get_visible_rect().size
-	var cam_pos: Vector2 = camera.position
-	var vp_right: float = vp_size.x * camera.zoom.x
-	var vp_bottom: float = vp_size.y * camera.zoom.y
+	#var cam_pos: Vector2 = camera.position
+	#var vp_right: float = vp_size.x * camera.zoom.x
+	#var vp_bottom: float = vp_size.y * camera.zoom.y
 	
 	var leftmost: float = - (vp_size.x / camera.zoom.x + 1) * grid_size
 	var topmost: float = - (vp_size.y / camera.zoom.y + 1) * grid_size
