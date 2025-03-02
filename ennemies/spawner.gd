@@ -1,8 +1,9 @@
 extends Node2D
 
-const ENNEMY_SPAWN_TIME = 0.3
+const ENNEMY_SPAWN_TIME = 0.5
 var timer = ENNEMY_SPAWN_TIME
 var scene = preload("res://ennemies/ennemies.tscn")
+var spawn_rate : float = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +15,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	timer -= delta
 	if timer < 0 :
+		var rand_value = randf()
+		if (rand_value < spawn_rate):
+			spawn()
+		else :
+			print("NOT SPAWNING")
 		timer = ENNEMY_SPAWN_TIME
-		spawn()
+		spawn_rate = min(spawn_rate + 0.1 * delta,1)
+	
 	
 
 func spawn():
