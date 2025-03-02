@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		var rand_value = randf()
 		if (rand_value < spawn_rate):
 			spawn()
-			life_rate += 10 * delta
+			life_rate *= 1 + delta
 		#else :
 			#print("NOT SPAWNING")
 		timer = ENNEMY_SPAWN_TIME
@@ -50,7 +50,7 @@ func spawn():
 	else:
 		instance.setup(randi()%4)
 	
-	instance.life = instance.life + life_rate
+	instance.life *= life_rate
 	print(instance.life)
 	add_child(instance)
 	
