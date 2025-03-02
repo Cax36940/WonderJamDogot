@@ -127,7 +127,7 @@ func spawn_object_at_pos(pos : Vector2):
 				instance.modulate.a = 1.0
 				instance.z_index = int(instance.position.y / 16)
 				grid_object_container.add_child(instance)
-				pathfinding.update_weights()
+				#pathfinding.update_weights()
 
 func delete_at_pos(pos : Vector2):
 	if mouse_object_container.get_child_count() > 0 :

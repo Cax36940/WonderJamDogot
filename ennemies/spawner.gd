@@ -51,6 +51,6 @@ func spawn():
 		instance.setup(randi()%4)
 	
 	instance.life *= life_rate
-	print(instance.life)
+	#print(instance.life)
 	add_child(instance)
 	
