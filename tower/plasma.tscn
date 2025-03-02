@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://byvh5aptvwhks"]
+[gd_scene load_steps=4 format=3 uid="uid://fh53wormpxf6"]
 
-[ext_resource type="Script" path="res://tower/bullet.gd" id="1_8wsqv"]
-[ext_resource type="Texture2D" uid="uid://bqql6w2b20bq8" path="res://sprite/tour/plasma.png" id="2_b4rv2"]
+[ext_resource type="Script" path="res://tower/plasma_bullet.gd" id="1_d8gf2"]
+[ext_resource type="Texture2D" uid="uid://0ni8sm6btaxf" path="res://sprite/tour/plasma.png" id="2_b4rv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6c0nd"]
 radius = 8.06226
 
 [node name="Bullet" type="Node2D"]
-script = ExtResource("1_8wsqv")
+script = ExtResource("1_d8gf2")
 
 [node name="BouletCanon" type="Sprite2D" parent="."]
 texture = ExtResource("2_b4rv2")

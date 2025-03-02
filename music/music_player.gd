@@ -54,18 +54,39 @@ func kick():
 					
 		$Kick.volume_db = min(db, 20)
 		$Kick.play()
-	
+
 func bass1():
 	var index = current_bar % bass1_list.size()
 	if bass1_list[index] == 1:
+		var db = 0
+		for child in grid_object_container.get_children():
+			if child is TowerDoubleCanon :
+				if child.shoot() :
+					db += 1
+					
+		$Bass1.volume_db = min(db, 20)
 		$Bass1.play()
 		
 func bass2():
 	var index = current_bar % bass2_list.size()
 	if bass2_list[index] == 1:
+		var db = 0
+		for child in grid_object_container.get_children():
+			if child is TowerFire :
+				if child.shoot() :
+					db += 1
+					
+		$Bass2.volume_db = min(db, 20)
 		$Bass2.play()
 
 func hihat():
 	var index = current_bar % hihat_list.size()
 	if hihat_list[index] == 1:
+		var db = 0
+		for child in grid_object_container.get_children():
+			if child is TowerPlasma :
+				if child.shoot() :
+					db += 1
+					
+		$Hihat.volume_db = min(db, 20)
 		$Hihat.play()

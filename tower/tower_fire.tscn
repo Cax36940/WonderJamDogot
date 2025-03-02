@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://hm84kwmyr51w"]
+
+[ext_resource type="Script" path="res://tower/tower_fire.gd" id="1_j2me7"]
+[ext_resource type="Texture2D" uid="uid://bt2n2epycvudf" path="res://sprite/tour/corps.png" id="2_h8jte"]
+[ext_resource type="Texture2D" uid="uid://yegty5i3n6ac" path="res://sprite/tour/anneau.png" id="3_lxpf4"]
+[ext_resource type="Texture2D" uid="uid://d00soicc6amsp" path="res://sprite/tour/lanceFlammeDroit.png" id="4_ua5gb"]
+[ext_resource type="PackedScene" uid="uid://ciql3ga8rhef8" path="res://tower/bout_de_canon.tscn" id="5_1sudy"]
+[ext_resource type="PackedScene" path="res://tower/detection_area.tscn" id="6_4dm0f"]
+
+[node name="TowerFire" type="Node2D"]
+script = ExtResource("1_j2me7")
+
+[node name="Corps" type="Sprite2D" parent="."]
+position = Vector2(0, -19.5)
+texture = ExtResource("2_h8jte")
+
+[node name="Anneau" type="Sprite2D" parent="."]
+modulate = Color(0.278431, 0.611765, 0.0823529, 1)
+position = Vector2(0, -19.5)
+texture = ExtResource("3_lxpf4")
+
+[node name="LanceFlammeDroit" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("4_ua5gb")
+offset = Vector2(7.445, 1.085)
+
+[node name="BoutDeCanon" parent="LanceFlammeDroit" instance=ExtResource("5_1sudy")]
+position = Vector2(15, -3)
+
+[node name="DetectionArea" parent="." instance=ExtResource("6_4dm0f")]
+position = Vector2(0, -1)
+collision_layer = 2
