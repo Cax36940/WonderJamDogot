@@ -21,20 +21,24 @@ func _process(delta: float) -> void:
 	else: $Icon.flip_h = false
 	#if (parent.global_position - global_position).length() < 0.1 :
 		#queue_free()
-		
-func setup1():
-	speed = 2
-	$Icon.play("Crawler")
-	
-func setup2():
-	speed = 4
-	$Icon.play("Ball")
-func setup3():
-	speed = 0.5
-	$Icon.play("Mecha")
-func setup4():
-	speed = 7
-	$Icon.play("Flyer")
+
+func setup(n:int):
+	match n:
+		0:
+			speed = 2
+			$Icon.play("Crawler")
+		1:
+			speed = 4
+			$Icon.play("Ball")
+		2:
+			speed = 0.5
+			$Icon.play("Mecha")
+		3:
+			speed = 7
+			$Icon.play("Flyer")
+		_:
+			speed = 2
+			$Icon.play("Crawler")
 
 func take_damage(damage : float):
 	life -= damage
