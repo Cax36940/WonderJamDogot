@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cndu6dkuoo2y6"]
 
 [ext_resource type="Script" path="res://menu/start_menu/start_menu.gd" id="1_u8xam"]
-[ext_resource type="Texture2D" uid="uid://btss68h7g3uu8" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
-[ext_resource type="Texture2D" uid="uid://bp2v0i4d83qpe" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
-[ext_resource type="Texture2D" uid="uid://cb1p5523kdsce" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
-[ext_resource type="Texture2D" uid="uid://cmh4rhcdtatsx" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
-[ext_resource type="Texture2D" uid="uid://ccinbdleyb4t3" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
-[ext_resource type="Texture2D" uid="uid://c78wgsoom1onm" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
+[ext_resource type="Texture2D" uid="uid://cjo6gpkw6mkkf" path="res://sprite/Bouton/start.png" id="2_sdl8l"]
+[ext_resource type="Texture2D" uid="uid://if80kfoniklb" path="res://sprite/Bouton/startClic.png" id="3_6wrn0"]
+[ext_resource type="Texture2D" uid="uid://bsb3jpwplkpg3" path="res://sprite/Bouton/startSurf.png" id="4_s1sox"]
+[ext_resource type="Texture2D" uid="uid://ctu2xn2rs2l8" path="res://sprite/Bouton/quitter.png" id="5_1s1mc"]
+[ext_resource type="Texture2D" uid="uid://bwcewqbtr63ag" path="res://sprite/Bouton/quitterClic.png" id="6_w4yiw"]
+[ext_resource type="Texture2D" uid="uid://cut15xnp01irv" path="res://sprite/Bouton/quitterSurf.png" id="7_fg2mn"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3

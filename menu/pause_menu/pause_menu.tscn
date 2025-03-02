@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ltmco52lueab" path="res://sprite/Bouton/resume.png" id="2_uhmhk"]
 [ext_resource type="Texture2D" uid="uid://blw5q6atoai1x" path="res://sprite/Bouton/resumeClic.png" id="3_3cx54"]
 [ext_resource type="Texture2D" uid="uid://bqut23r6tap2d" path="res://sprite/Bouton/resumeSurf.png" id="4_84i52"]
-[ext_resource type="Texture2D" uid="uid://cmh4rhcdtatsx" path="res://sprite/Bouton/quitter.png" id="5_ajsrk"]
-[ext_resource type="Texture2D" uid="uid://ccinbdleyb4t3" path="res://sprite/Bouton/quitterClic.png" id="6_0gd7s"]
-[ext_resource type="Texture2D" uid="uid://c78wgsoom1onm" path="res://sprite/Bouton/quitterSurf.png" id="7_0uoxa"]
+[ext_resource type="Texture2D" uid="uid://ctu2xn2rs2l8" path="res://sprite/Bouton/quitter.png" id="5_ajsrk"]
+[ext_resource type="Texture2D" uid="uid://bwcewqbtr63ag" path="res://sprite/Bouton/quitterClic.png" id="6_0gd7s"]
+[ext_resource type="Texture2D" uid="uid://cut15xnp01irv" path="res://sprite/Bouton/quitterSurf.png" id="7_0uoxa"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3

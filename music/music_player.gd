@@ -54,7 +54,7 @@ func kick():
 			$Kick.volume_db = -20
 		else :
 			$Kick.volume_db = min(db, 20)
-		$Kick.play()
+			$Kick.play()
 
 func bass1():
 	var index = current_bar % bass1_list.size()
@@ -64,12 +64,11 @@ func bass1():
 			if child is TowerDoubleCanon :
 				if child.shoot() :
 					db += 1
-		
 		if db == 0:
 			$Bass1.volume_db = -20
 		else :
 			$Bass1.volume_db = min(db, 20)
-		$Bass1.play()
+			$Bass1.play()
 		
 func bass2():
 	var index = current_bar % bass2_list.size()
@@ -83,7 +82,7 @@ func bass2():
 			$Bass2.volume_db = -20
 		else :
 			$Bass2.volume_db = min(db, 20)
-		$Bass2.play()
+			$Bass2.play()
 
 func hihat():
 	var index = current_bar % hihat_list.size()
@@ -97,4 +96,4 @@ func hihat():
 			$Hihat.volume_db = -20
 		else :
 			$Hihat.volume_db = min(db, 20)
-		$Hihat.play()
+			$Hihat.play()

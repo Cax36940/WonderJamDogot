@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 		can_shoot = false
 
 
-func shoot()-> void:
+func shoot()-> bool:
 	if can_shoot :
 		var instance = bullet_ref.instantiate()
 		var vecteur = Vector2(1,0)
@@ -56,9 +56,9 @@ func shoot()-> void:
 		instance.attack = attack
 		instance.direction = vecteur #On peut modifier l'instance avant de l'ajouter
 		add_child(instance)
-		
-		
-		pass
+		return true
+	return false
+	
 func lvl_up_health() -> void :
 	var tmp_modif : float = health_modif - current_level * 0.01
 	if tmp_modif < 1.05 :
