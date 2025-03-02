@@ -30,7 +30,7 @@ position = Vector2(0, -19.5)
 texture = ExtResource("2_umsj2")
 
 [node name="Anneau" type="Sprite2D" parent="."]
-modulate = Color(0.278431, 0.611765, 0.0823529, 1)
+modulate = Color(0.362667, 0.8, 0.16, 1)
 position = Vector2(0, -19.5)
 texture = ExtResource("3_43bf1")
 

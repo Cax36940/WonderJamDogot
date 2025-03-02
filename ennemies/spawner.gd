@@ -4,7 +4,7 @@ const ENNEMY_SPAWN_TIME = 0.5
 var timer = ENNEMY_SPAWN_TIME
 var scene = preload("res://ennemies/ennemies.tscn")
 var spawn_rate : float = 0.2
-var life_rate: float = 0.0
+var life_rate: float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		var rand_value = randf()
 		if (rand_value < spawn_rate):
 			spawn()
-			life_rate += 10 * delta
+			life_rate *= 1 + delta
 		#else :
 			#print("NOT SPAWNING")
 		timer = ENNEMY_SPAWN_TIME
@@ -50,7 +50,7 @@ func spawn():
 	else:
 		instance.setup(randi()%4)
 	
-	instance.life = instance.life + life_rate
+	instance.life *= life_rate
 	print(instance.life)
 	add_child(instance)
 	

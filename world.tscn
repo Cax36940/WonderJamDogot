@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mkojoc68cgue" path="res://pathfinding/pathfinding.tscn" id="4_lna7t"]
 [ext_resource type="PackedScene" uid="uid://dlvu2l452pa4m" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
 [ext_resource type="PackedScene" uid="uid://c8rha5ngjw3br" path="res://menu/shop_menu/shop_menu.tscn" id="9_4v3h7"]
-[ext_resource type="PackedScene" path="res://sprite/Roi/Roi.tscn" id="9_hv7dp"]
+[ext_resource type="PackedScene" uid="uid://dct8gm5euhbjd" path="res://sprite/Roi/Roi.tscn" id="9_hv7dp"]
 [ext_resource type="PackedScene" uid="uid://djjionukw6erg" path="res://music/music_player.tscn" id="10_3tccu"]
 
 [node name="World" type="Node2D"]
@@ -25,6 +25,9 @@ script = ExtResource("3_lexd8")
 
 [node name="GridObjectContainer" type="Node2D" parent="."]
 
+[node name="Node2D" parent="GridObjectContainer" instance=ExtResource("9_hv7dp")]
+position = Vector2(328, 328)
+
 [node name="MouseObjectContainer" type="Node2D" parent="."]
 
 [node name="Spawner" parent="." instance=ExtResource("2_n0e68")]
@@ -33,8 +36,9 @@ position = Vector2(328, 328)
 [node name="Pathfinding" parent="." instance=ExtResource("4_lna7t")]
 
 [node name="ShopMenu" parent="." instance=ExtResource("9_4v3h7")]
+offset_left = 6.0
+offset_top = -52.0
+offset_right = 6.0
+offset_bottom = -52.0
 
 [node name="MusicPlayer" parent="." instance=ExtResource("10_3tccu")]
-
-[node name="Node2D" parent="." instance=ExtResource("9_hv7dp")]
-position = Vector2(328, 328)
