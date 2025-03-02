@@ -1,14 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bi422o21y7s82"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_n6rbg"]
-[ext_resource type="PackedScene" path="res://grid_sprite.tscn" id="2_8suw1"]
+[ext_resource type="PackedScene" uid="uid://dgku7mth22plj" path="res://grid_sprite.tscn" id="2_8suw1"]
 [ext_resource type="PackedScene" uid="uid://25ocrsgv466b" path="res://ennemies/spawner.tscn" id="2_n0e68"]
 [ext_resource type="Script" path="res://camera.gd" id="3_lexd8"]
 [ext_resource type="PackedScene" uid="uid://mkojoc68cgue" path="res://pathfinding/pathfinding.tscn" id="4_lna7t"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="PackedScene" uid="uid://vywsr673wqme" path="res://tower/tower_canonDouble.tscn" id="5_wkvil"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://dlvu2l452pa4m" path="res://sprite/Background/background.tscn" id="5_wxdmg"]
 [ext_resource type="PackedScene" uid="uid://c8rha5ngjw3br" path="res://menu/shop_menu/shop_menu.tscn" id="9_4v3h7"]
 [ext_resource type="PackedScene" uid="uid://djjionukw6erg" path="res://music/music_player.tscn" id="10_3tccu"]

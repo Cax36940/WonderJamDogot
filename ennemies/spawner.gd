@@ -20,10 +20,19 @@ func _process(delta: float) -> void:
 
 func spawn():
 	var instance = scene.instantiate()
-	var random_value = randf_range(0, 2*PI)
-	instance.position.x = 200 * cos(random_value)
-	instance.position.y = 200 * sin(random_value)
+	const radius = 600
 	instance.scale *= 0.2
+	var random_value = randi() % 4
+	match random_value:
+		0:
+			instance.position = Vector2(randf_range(-radius,radius),-radius)
+		1:
+			instance.position = Vector2(radius,randf_range(-radius,radius))
+		2:
+			instance.position = Vector2(randf_range(-radius,radius),radius)
+		3: 
+			instance.position = Vector2(-radius,randf_range(-radius,radius))
+	
 	var random_ennemy: int = randi_range(0,3)
 	if random_ennemy == 0 :
 		instance.setup1()

@@ -1,17 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://dk1jkxnnd418q"]
 
 [ext_resource type="Script" path="res://ennemies/ennemies.gd" id="1_24r05"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://fnibxspffci0" path="res://sprite/Aliens/Ball_man/BallMan.png" id="2_62f0v"]
-[ext_resource type="Texture2D" uid="uid://6gbanhgigtv0" path="res://sprite/Aliens/Tentacle_crawler/Tentacle_crawler_SpriteSheet.png" id="2_orrsq"]
-[ext_resource type="Texture2D" uid="uid://b5jwqgvho55le" path="res://sprite/Aliens/Giant_Roller/Giant_roller.png" id="4_hlncj"]
-[ext_resource type="Texture2D" uid="uid://bkse8bnv412xi" path="res://sprite/Aliens/Flying/Flyer.png" id="4_mu8bb"]
-=======
 [ext_resource type="Texture2D" uid="uid://xxyvucu56oqq" path="res://sprite/Aliens/Ball_man/BallMan.png" id="2_62f0v"]
 [ext_resource type="Texture2D" uid="uid://dvraam1507o85" path="res://sprite/Aliens/Tentacle_crawler/Tentacle_crawler_SpriteSheet.png" id="2_orrsq"]
 [ext_resource type="Texture2D" uid="uid://clgxqaqxc5io5" path="res://sprite/Aliens/Giant_Roller/Giant_roller.png" id="4_hlncj"]
 [ext_resource type="Texture2D" uid="uid://ogwhq8fvlip4" path="res://sprite/Aliens/Flying/Flyer.png" id="4_mu8bb"]
->>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dcdj"]
 atlas = ExtResource("2_62f0v")
