@@ -14,6 +14,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+
+func add_money_value(value):
+	coin_total_float += value
+	coin_total = int(coin_total_float)
+
 func add_money(increase_value:float):
 	coin_total_float += increase_value
 	coin_total = int(coin_total_float)

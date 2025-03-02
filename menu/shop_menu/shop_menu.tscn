@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8rha5ngjw3br"]
+[gd_scene load_steps=14 format=3 uid="uid://c8rha5ngjw3br"]
 
 [ext_resource type="ButtonGroup" path="res://menu/shop_menu/button_group.tres" id="1_hqucl"]
 [ext_resource type="Texture2D" uid="uid://dnyx8rv6kt002" path="res://sprite/Bouton/shop_button.png" id="1_pqsj3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b1w3elehavm3b" path="res://sprite/shop/iconCanonPlasma.png" id="9_necqf"]
 [ext_resource type="Texture2D" uid="uid://dryxee3fi3yn2" path="res://sprite/barriere/iconBarriere.png" id="10_ygwwp"]
 [ext_resource type="Script" path="res://menu/shop_menu/coin_count.gd" id="11_3c1gm"]
+[ext_resource type="PackedScene" uid="uid://bme5p8h4j70ly" path="res://menu/bonus_menu/bonus_menu.tscn" id="13_cetvc"]
 
 [node name="ShopMenu" type="Control"]
 layout_mode = 3
@@ -69,10 +70,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.519
 anchor_bottom = 1.0
-offset_left = -11.0
-offset_top = -61.0
-offset_right = 18.005
-offset_bottom = -38.0
+offset_left = -16.0
+offset_top = -101.0
+offset_right = 21.568
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -106,10 +107,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -13.0
-offset_top = -61.0
-offset_right = 18.0
-offset_bottom = -38.0
+offset_left = -19.0
+offset_top = -103.0
+offset_right = 21.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -143,10 +144,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -13.0
-offset_top = -61.0
-offset_right = 18.0
-offset_bottom = -38.0
+offset_left = -16.0
+offset_top = -101.0
+offset_right = 20.0
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -180,10 +181,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -16.5
-offset_top = -63.0
-offset_right = 23.5
-offset_bottom = -40.0
+offset_left = -27.0
+offset_top = -105.0
+offset_right = 28.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -192,6 +193,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="iconBarriere" type="TextureButton" parent="CanvasLayer/Shop/ShopColumn" groups=["ShopButtons"]]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 toggle_mode = true
@@ -232,6 +234,12 @@ vertical_alignment = 1
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("11_3c1gm")
+
+[node name="BonusMenu" parent="CanvasLayer" instance=ExtResource("13_cetvc")]
+offset_left = 2.0
+offset_top = 671.0
+offset_right = -529.0
+offset_bottom = 3.0
 
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconCanon" to="CanvasLayer/Shop/ShopColumn/iconCanon" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" to="CanvasLayer/Shop/ShopColumn/iconDoubleCanon" method="_on_pressed"]
